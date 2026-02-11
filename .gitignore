@@ -20,6 +20,8 @@ out/
 # Credentials / Secrets
 credentials/
 *.json.key
+*-service-account*.json
+m3ndel-lab-*.json
 
 # IDE
 .idea/
