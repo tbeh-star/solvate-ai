@@ -1,0 +1,2884 @@
+[
+  {
+    "file_name": "BELSIL-CDM-3526-VP-TDS-en-2024.06.16.pdf",
+    "file_path": "/Users/taobehrendt/Desktop/Claude/02_Input/Wacker/BELSIL®/BELSIL® CDM 3526 VP/BELSIL-CDM-3526-VP-TDS-en-2024.06.16.pdf",
+    "brand": "BELSIL",
+    "product_folder": "BELSIL® CDM 3526 VP",
+    "doc_type": "SDS",
+    "success": true,
+    "error": null,
+    "provider": "google",
+    "model": "gemini-2.5-flash",
+    "duration_ms": 16504,
+    "input_tokens": 2206,
+    "output_tokens": 1265,
+    "cache_read_tokens": 0,
+    "extraction": {
+      "document_info": {
+        "document_type": "SDS",
+        "language": "en",
+        "manufacturer": "Wacker Chemie AG",
+        "brand": "BELSIL",
+        "revision_date": "16.06.2024",
+        "page_count": 2
+      },
+      "identity": {
+        "product_name": "BELSIL® CDM 3526 VP",
+        "product_line": "BELSIL",
+        "wacker_sku": null,
+        "material_numbers": [],
+        "product_url": "http://www.wacker.com",
+        "grade": {
+          "value": "Cosmetic",
+          "unit": null,
+          "source_section": "Page 1, Technical data; Page 2, Application details",
+          "raw_string": "INCI C26 - 28 Alkyl Dimethicone; The main applications of this silicone wax is in skin protection, Skin Care, Sunscreens and Decorative Cosmetics.",
+          "confidence": "high",
+          "is_specification": false,
+          "test_method": null
+        }
+      },
+      "chemical": {
+        "cas_numbers": {
+          "value": null,
+          "unit": null,
+          "source_section": "not found",
+          "raw_string": "CAS number not found in document",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        },
+        "chemical_components": [],
+        "chemical_synonyms": [
+          "C26 - 28 Alkyl Dimethicone"
+        ],
+        "purity": null
+      },
+      "physical": {
+        "physical_form": {
+          "value": "pasty",
+          "unit": null,
+          "source_section": "Page 1, Technical data table",
+          "raw_string": "Appearance pasty",
+          "confidence": "high",
+          "is_specification": false,
+          "test_method": null
+        },
+        "density": null,
+        "flash_point": null,
+        "temperature_range": null,
+        "shelf_life": null,
+        "cure_system": null
+      },
+      "application": {
+        "main_application": "Skin protection, Skin Care, Sunscreens and Decorative Cosmetics",
+        "usage_restrictions": [],
+        "packaging_options": []
+      },
+      "safety": {
+        "ghs_statements": [],
+        "un_number": null,
+        "certifications": [],
+        "global_inventories": [],
+        "blocked_countries": [],
+        "blocked_industries": []
+      },
+      "compliance": {
+        "wiaw_status": null,
+        "sales_advisory": null
+      },
+      "missing_attributes": [
+        "wacker_sku",
+        "material_numbers",
+        "cas_numbers",
+        "purity",
+        "density",
+        "flash_point",
+        "temperature_range",
+        "shelf_life",
+        "cure_system",
+        "usage_restrictions",
+        "packaging_options",
+        "ghs_statements",
+        "un_number",
+        "certifications",
+        "global_inventories",
+        "blocked_countries",
+        "blocked_industries",
+        "wiaw_status",
+        "sales_advisory"
+      ],
+      "extraction_warnings": [
+        "The document was identified as an SDS by the prompt, but its content and structure resemble a Technical Data Sheet (TDS) or Product Information Sheet, lacking standard SDS sections (e.g., GHS, CAS, UN, Inventories). This has resulted in many SDS-specific fields being null.",
+        "Values from the 'Technical data' table (Appearance, Color, INCI name, Melting point) are explicitly stated as 'only intended as a guide and should not be used in preparing specifications', therefore 'is_specification' is set to false for these values."
+      ]
+    }
+  },
+  {
+    "file_name": "BELSIL-DM-6101-E-TDS-en-2024.06.16.pdf",
+    "file_path": "/Users/taobehrendt/Desktop/Claude/02_Input/Wacker/BELSIL®/BELSIL® DM 6101 E/BELSIL-DM-6101-E-TDS-en-2024.06.16.pdf",
+    "brand": "BELSIL",
+    "product_folder": "BELSIL® DM 6101 E",
+    "doc_type": "SDS",
+    "success": true,
+    "error": null,
+    "provider": "google",
+    "model": "gemini-2.5-flash",
+    "duration_ms": 34194,
+    "input_tokens": 2256,
+    "output_tokens": 1865,
+    "cache_read_tokens": 0,
+    "extraction": {
+      "document_info": {
+        "document_type": "TDS",
+        "language": "en",
+        "manufacturer": "Wacker Chemie AG",
+        "brand": "BELSIL",
+        "revision_date": "16.06.2024",
+        "page_count": 2
+      },
+      "identity": {
+        "product_name": "BELSIL® DM 6101 E",
+        "product_line": "Silicone Fluid Emulsions",
+        "wacker_sku": null,
+        "material_numbers": [],
+        "product_url": "http://www.wacker.com",
+        "grade": {
+          "value": "Cosmetic",
+          "unit": null,
+          "source_section": "Inferred from Applications and Brand Logic",
+          "raw_string": "Applications: Conditioners, Shampoos, hair treatments and hair masks. Brand: BELSIL (Personal care silicones).",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        }
+      },
+      "chemical": {
+        "cas_numbers": {
+          "value": null,
+          "unit": null,
+          "source_section": "not found",
+          "raw_string": "CAS number not found in document",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        },
+        "chemical_components": [
+          "Dimethicone",
+          "Trideceth-5",
+          "nonionic emulsifier"
+        ],
+        "chemical_synonyms": [],
+        "purity": {
+          "value": "60",
+          "unit": "%",
+          "source_section": "Page 1, Technical data table",
+          "raw_string": "Active ingredients content - approx. 60 %",
+          "confidence": "high",
+          "is_specification": false,
+          "test_method": null
+        }
+      },
+      "physical": {
+        "physical_form": {
+          "value": "milky-white liquid",
+          "unit": null,
+          "source_section": "Page 1, Technical data table",
+          "raw_string": "Appearance and color - milky-white liquid",
+          "confidence": "high",
+          "is_specification": false,
+          "test_method": null
+        },
+        "density": null,
+        "flash_point": null,
+        "temperature_range": {
+          "value": "5",
+          "unit": "°C",
+          "source_section": "Page 2, Packaging and storage",
+          "raw_string": "Minimum temperature allowed during storage and transportation: 5 °C",
+          "confidence": "high",
+          "is_specification": false,
+          "test_method": null
+        },
+        "shelf_life": null,
+        "cure_system": null
+      },
+      "application": {
+        "main_application": "Conditioning agent for shampoos, rinse-off and leave-in conditioners, hair treatments, and hair masks.",
+        "usage_restrictions": [
+          "Protect against frost.",
+          "Recommended use levels of 1 % to 6 %."
+        ],
+        "packaging_options": []
+      },
+      "safety": {
+        "ghs_statements": [],
+        "un_number": null,
+        "certifications": [],
+        "global_inventories": [],
+        "blocked_countries": [],
+        "blocked_industries": []
+      },
+      "compliance": {
+        "wiaw_status": null,
+        "sales_advisory": null
+      },
+      "missing_attributes": [
+        "wacker_sku",
+        "material_numbers",
+        "cas_numbers",
+        "chemical_synonyms",
+        "density",
+        "flash_point",
+        "shelf_life",
+        "cure_system",
+        "packaging_options",
+        "ghs_statements",
+        "un_number",
+        "certifications",
+        "global_inventories",
+        "blocked_countries",
+        "blocked_industries",
+        "wiaw_status",
+        "sales_advisory"
+      ],
+      "extraction_warnings": [
+        "The document provided is a Technical Data Sheet (TDS) or Product Information Sheet, not a Safety Data Sheet (SDS) as indicated in the prompt. Therefore, many SDS-specific fields (e.g., CAS Numbers, GHS Statements, UN Number, Density, Flash Point, Global Inventories, Certifications) could not be extracted as they are not present in this document type.",
+        "Grade classification 'Cosmetic' is inferred based on the product's brand (BELSIL for personal care) and stated applications (shampoos, conditioners, hair treatments).",
+        "The specific duration of 'shelf_life' is not provided in the document; it only states that the 'Best use before end' date is shown on the product label."
+      ]
+    }
+  },
+  {
+    "file_name": "ELASTOSIL-LR-304040-AB-TDS-en-2024.06.16.pdf",
+    "file_path": "/Users/taobehrendt/Desktop/Claude/02_Input/Wacker/ELASTOSIL®/ELASTOSIL® LR 3040:40 A:B/ELASTOSIL-LR-304040-AB-TDS-en-2024.06.16.pdf",
+    "brand": "ELASTOSIL",
+    "product_folder": "ELASTOSIL® LR 3040:40 A:B",
+    "doc_type": "Brochure",
+    "success": true,
+    "error": null,
+    "provider": "google",
+    "model": "gemini-2.5-flash",
+    "duration_ms": 23056,
+    "input_tokens": 3334,
+    "output_tokens": 2009,
+    "cache_read_tokens": 0,
+    "extraction": {
+      "document_info": {
+        "document_type": "Brochure",
+        "language": "en",
+        "manufacturer": "Wacker Chemie AG",
+        "brand": "ELASTOSIL",
+        "revision_date": "16.06.2024",
+        "page_count": 4
+      },
+      "identity": {
+        "product_name": "ELASTOSIL® LR 3040/40 A/B",
+        "product_line": "ELASTOSIL",
+        "wacker_sku": null,
+        "material_numbers": [],
+        "product_url": null,
+        "grade": {
+          "value": "Food",
+          "unit": null,
+          "source_section": "Page 1, Specific features; Page 3, Application details",
+          "raw_string": "Food-contact; suitable for use in conjunction with foodstuffs; food contact applications and are suitable for use under the Recommendation \"XV. Silicones\" of the BfR and FDA § 177.2600",
+          "confidence": "medium",
+          "is_specification": false,
+          "test_method": null
+        }
+      },
+      "chemical": {
+        "cas_numbers": {
+          "value": null,
+          "unit": null,
+          "source_section": "not found",
+          "raw_string": "CAS number not found in document",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        },
+        "chemical_components": [],
+        "chemical_synonyms": [
+          "Liquid Silicone Rubber (LSR)"
+        ],
+        "purity": null
+      },
+      "physical": {
+        "physical_form": {
+          "value": "Paste-like liquid",
+          "unit": null,
+          "source_section": "Page 1, description",
+          "raw_string": "paste-like, easily-pigmentable two-component compounds; Liquid Silicone Rubber (LSR)",
+          "confidence": "medium",
+          "is_specification": false,
+          "test_method": null
+        },
+        "density": {
+          "value": 1.12,
+          "unit": "g/cm³",
+          "source_section": "Page 2, Technical data, Properties Cured table",
+          "raw_string": "1.12 g/cm³",
+          "confidence": "medium",
+          "is_specification": false,
+          "test_method": "DIN EN ISO 1183-1 A"
+        },
+        "flash_point": null,
+        "temperature_range": {
+          "value": "-55 to +210",
+          "unit": "°C",
+          "source_section": "Page 1, Properties",
+          "raw_string": "temperature range of - 55 °C to + 210 °C",
+          "confidence": "medium",
+          "is_specification": false,
+          "test_method": null
+        },
+        "shelf_life": null,
+        "cure_system": {
+          "value": "Addition cure (platinum-catalyzed)",
+          "unit": null,
+          "source_section": "Page 1, description; Page 3, Storage",
+          "raw_string": "two-component compounds; platinum catalyst",
+          "confidence": "medium",
+          "is_specification": false,
+          "test_method": null
+        }
+      },
+      "application": {
+        "main_application": "['Economical production of large series of injection-moulded articles', 'Technical applications', 'Baby Care', 'Dairy & Food Applications', 'General Automotive Parts', 'Household Applications', 'Molded Parts', 'Molded Seals (Automotive)']",
+        "usage_restrictions": [
+          "Addition of heat stabilizers recommended at service temperatures > 180 °C",
+          "Observance of limitations on extractable and volatile substances for food contact applications"
+        ],
+        "packaging_options": [
+          "20 kg pail kits",
+          "200 kg drum kits"
+        ]
+      },
+      "safety": {
+        "ghs_statements": [],
+        "un_number": null,
+        "certifications": [
+          "BfR Recommendation XV. Silicones",
+          "FDA § 177.2600"
+        ],
+        "global_inventories": [],
+        "blocked_countries": [],
+        "blocked_industries": []
+      },
+      "compliance": {
+        "wiaw_status": null,
+        "sales_advisory": null
+      },
+      "missing_attributes": [
+        "wacker_sku",
+        "material_numbers",
+        "product_url",
+        "cas_numbers",
+        "chemical_components",
+        "purity",
+        "flash_point",
+        "shelf_life",
+        "ghs_statements",
+        "un_number",
+        "global_inventories",
+        "blocked_countries",
+        "blocked_industries",
+        "wiaw_status",
+        "sales_advisory"
+      ],
+      "extraction_warnings": []
+    }
+  },
+  {
+    "file_name": "ELASTOSIL-LR-306530-AB-TDS-en-2024.06.16.pdf",
+    "file_path": "/Users/taobehrendt/Desktop/Claude/02_Input/Wacker/ELASTOSIL®/ELASTOSIL® LR 3065:30 A:B/ELASTOSIL-LR-306530-AB-TDS-en-2024.06.16.pdf",
+    "brand": "ELASTOSIL",
+    "product_folder": "ELASTOSIL® LR 3065:30 A:B",
+    "doc_type": "Brochure",
+    "success": true,
+    "error": null,
+    "provider": "google",
+    "model": "gemini-2.5-flash",
+    "duration_ms": 16771,
+    "input_tokens": 3067,
+    "output_tokens": 1879,
+    "cache_read_tokens": 0,
+    "extraction": {
+      "document_info": {
+        "document_type": "Brochure",
+        "language": "en",
+        "manufacturer": "Wacker Chemie AG",
+        "brand": "ELASTOSIL",
+        "revision_date": "16.06.2024",
+        "page_count": 3
+      },
+      "identity": {
+        "product_name": "ELASTOSIL® LR 3065/30 A/B",
+        "product_line": "ELASTOSIL",
+        "wacker_sku": null,
+        "material_numbers": [],
+        "product_url": null,
+        "grade": {
+          "value": "technical",
+          "unit": null,
+          "source_section": "Page 1, Page 3",
+          "raw_string": "there is no need to post-cure technical parts.",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        }
+      },
+      "chemical": {
+        "cas_numbers": {
+          "value": null,
+          "unit": null,
+          "source_section": "not found",
+          "raw_string": "CAS number not found in document",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        },
+        "chemical_components": [],
+        "chemical_synonyms": [],
+        "purity": null
+      },
+      "physical": {
+        "physical_form": {
+          "value": "Liquid Silicone Rubber (LSR), paste-like",
+          "unit": null,
+          "source_section": "Page 1",
+          "raw_string": "Liquid Silicone Rubber (LSR)\nLiquid silicone rubber of the ELASTOSIL® LR 3065 series are a paste-like, easily-pigmentable two-component compounds",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        },
+        "density": {
+          "value": 1.12,
+          "unit": "g/cm³",
+          "source_section": "Page 2, Properties Cured table",
+          "raw_string": "Density - 1.12 g/cm³ DIN EN ISO 1183-1 A",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": "DIN EN ISO 1183-1 A"
+        },
+        "flash_point": null,
+        "temperature_range": {
+          "value": "-55 to +210",
+          "unit": "°C",
+          "source_section": "Page 1, Properties",
+          "raw_string": "This product can be used within a temperature range of - 55 °C to + 210 °C.",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        },
+        "shelf_life": null,
+        "cure_system": {
+          "value": "two-component, platinum catalyst",
+          "unit": null,
+          "source_section": "Page 1, Page 3",
+          "raw_string": "two-component compounds",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        }
+      },
+      "application": {
+        "main_application": "['Battery Coolant Connectors', 'Connector Seals', 'General Automotive Parts', 'Molded Parts', 'Molded Seals (Automotive)', 'economical production of large series of injection moulded articles', 'technical applications']",
+        "usage_restrictions": [
+          "do not comply with regulations in the pharmaceutical and food industry"
+        ],
+        "packaging_options": [
+          "20 kg pail",
+          "200 kg drum kits"
+        ]
+      },
+      "safety": {
+        "ghs_statements": [],
+        "un_number": null,
+        "certifications": [],
+        "global_inventories": [],
+        "blocked_countries": [],
+        "blocked_industries": [
+          "pharmaceutical industry",
+          "food industry"
+        ]
+      },
+      "compliance": {
+        "wiaw_status": null,
+        "sales_advisory": null
+      },
+      "missing_attributes": [
+        "wacker_sku",
+        "material_numbers",
+        "product_url",
+        "cas_numbers",
+        "chemical_components",
+        "chemical_synonyms",
+        "purity",
+        "flash_point",
+        "shelf_life",
+        "ghs_statements",
+        "un_number",
+        "certifications",
+        "global_inventories",
+        "blocked_countries",
+        "wiaw_status",
+        "sales_advisory"
+      ],
+      "extraction_warnings": [
+        "The document explicitly states 'These figures are only intended as a guide and should not be used in preparing specifications.' for all technical data tables. Therefore, values extracted from these tables are marked with confidence 'low' and 'is_specification: false'."
+      ]
+    }
+  },
+  {
+    "file_name": "ELASTOSIL-LR-306550-AB-TDS-en-2024.06.16.pdf",
+    "file_path": "/Users/taobehrendt/Desktop/Claude/02_Input/Wacker/ELASTOSIL®/ELASTOSIL® LR 3065:50 A:B/ELASTOSIL-LR-306550-AB-TDS-en-2024.06.16.pdf",
+    "brand": "ELASTOSIL",
+    "product_folder": "ELASTOSIL® LR 3065:50 A:B",
+    "doc_type": "Brochure",
+    "success": true,
+    "error": null,
+    "provider": "google",
+    "model": "gemini-2.5-flash",
+    "duration_ms": 15264,
+    "input_tokens": 3071,
+    "output_tokens": 2114,
+    "cache_read_tokens": 0,
+    "extraction": {
+      "document_info": {
+        "document_type": "Brochure",
+        "language": "en",
+        "manufacturer": "Wacker Chemie AG",
+        "brand": "ELASTOSIL",
+        "revision_date": "16.06.2024",
+        "page_count": 3
+      },
+      "identity": {
+        "product_name": "ELASTOSIL® LR 3065/50 A/B",
+        "product_line": "Liquid Silicone Rubber (LSR)",
+        "wacker_sku": null,
+        "material_numbers": [],
+        "product_url": "http://www.wacker.com",
+        "grade": {
+          "value": "Technical",
+          "unit": null,
+          "source_section": "Page 3",
+          "raw_string": "do not comply with regulations in the pharmaceutical and food industry.",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        }
+      },
+      "chemical": {
+        "cas_numbers": {
+          "value": null,
+          "unit": null,
+          "source_section": "not found",
+          "raw_string": "CAS number not found in document",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        },
+        "chemical_components": [
+          "two-component compounds",
+          "A and B components"
+        ],
+        "chemical_synonyms": [],
+        "purity": null
+      },
+      "physical": {
+        "physical_form": {
+          "value": "paste-like",
+          "unit": null,
+          "source_section": "Page 1",
+          "raw_string": "paste-like, easily-pigmentable two-component compounds",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        },
+        "density": {
+          "value": 1.12,
+          "unit": "g/cm³",
+          "source_section": "Page 2, Properties Cured table",
+          "raw_string": "1.12 g/cm³",
+          "confidence": "medium",
+          "is_specification": false,
+          "test_method": "DIN EN ISO 1183-1 A"
+        },
+        "flash_point": null,
+        "temperature_range": {
+          "value": "-55 to +210",
+          "unit": "°C",
+          "source_section": "Page 1, Properties",
+          "raw_string": "This product can be used within a temperature range of - 55 °C to + 210 °C.",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        },
+        "shelf_life": {
+          "value": "Best use before end date on product label",
+          "unit": null,
+          "source_section": "Page 3, Storage",
+          "raw_string": "The 'Best use before end' date of each batch is shown on the product label.",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        },
+        "cure_system": {
+          "value": "Platinum-catalyzed addition cure",
+          "unit": null,
+          "source_section": "Page 1, Page 3",
+          "raw_string": "two-component compounds with short curing times",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        }
+      },
+      "application": {
+        "main_application": "Battery Coolant Connectors, Connector Seals, General Automotive Parts, Molded Parts, Molded Seals (Automotive), injection moulded articles",
+        "usage_restrictions": [
+          "Do not comply with regulations in the pharmaceutical and food industry",
+          "Addition of heat stabilizers recommended at service temperatures of more than 180 °C"
+        ],
+        "packaging_options": [
+          "20 kg pail kits",
+          "200 kg drum kits"
+        ]
+      },
+      "safety": {
+        "ghs_statements": [],
+        "un_number": null,
+        "certifications": [],
+        "global_inventories": [],
+        "blocked_countries": [],
+        "blocked_industries": [
+          "Pharmaceutical industry",
+          "Food industry"
+        ]
+      },
+      "compliance": {
+        "wiaw_status": null,
+        "sales_advisory": null
+      },
+      "missing_attributes": [
+        "wacker_sku",
+        "material_numbers",
+        "cas_numbers",
+        "chemical_synonyms",
+        "purity",
+        "flash_point",
+        "ghs_statements",
+        "un_number",
+        "certifications",
+        "global_inventories",
+        "wiaw_status",
+        "sales_advisory"
+      ],
+      "extraction_warnings": [
+        "The product URL provided is a general Wacker website, not a direct product page.",
+        "Values from 'Technical data' tables (e.g., Density) are explicitly stated as guides and not for specifications, hence confidence is 'medium' and is_specification is 'false'."
+      ]
+    }
+  },
+  {
+    "file_name": "ELASTOSIL-LR-306640-AB-TDS-en-2024.06.16.pdf",
+    "file_path": "/Users/taobehrendt/Desktop/Claude/02_Input/Wacker/ELASTOSIL®/ELASTOSIL® LR 3066:40 A:B/ELASTOSIL-LR-306640-AB-TDS-en-2024.06.16.pdf",
+    "brand": "ELASTOSIL",
+    "product_folder": "ELASTOSIL® LR 3066:40 A:B",
+    "doc_type": "Brochure",
+    "success": true,
+    "error": null,
+    "provider": "google",
+    "model": "gemini-2.5-flash",
+    "duration_ms": 21392,
+    "input_tokens": 3074,
+    "output_tokens": 2288,
+    "cache_read_tokens": 0,
+    "extraction": {
+      "document_info": {
+        "document_type": "Brochure",
+        "language": "en",
+        "manufacturer": "Wacker Chemie AG",
+        "brand": "ELASTOSIL",
+        "revision_date": "16.06.2024",
+        "page_count": 3
+      },
+      "identity": {
+        "product_name": "ELASTOSIL® LR 3066/40 A/B",
+        "product_line": "ELASTOSIL® LR 3066 series",
+        "wacker_sku": null,
+        "material_numbers": [],
+        "product_url": null,
+        "grade": {
+          "value": "LR 3066/40 A/B",
+          "unit": null,
+          "source_section": "Page 1",
+          "raw_string": "ELASTOSIL® LR 3066/40 A/B",
+          "confidence": "medium",
+          "is_specification": false,
+          "test_method": null
+        }
+      },
+      "chemical": {
+        "cas_numbers": {
+          "value": null,
+          "unit": null,
+          "source_section": "not found",
+          "raw_string": "CAS number not found in document",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        },
+        "chemical_components": [
+          "two-component compounds",
+          "A and B components"
+        ],
+        "chemical_synonyms": [],
+        "purity": null
+      },
+      "physical": {
+        "physical_form": {
+          "value": "Liquid Silicone Rubber (LSR), paste-like",
+          "unit": null,
+          "source_section": "Page 1",
+          "raw_string": "Liquid Silicone Rubber (LSR)\nLiquid silicone rubbers of the ELASTOSIL® LR 3066 series are paste-like",
+          "confidence": "medium",
+          "is_specification": false,
+          "test_method": null
+        },
+        "density": {
+          "value": 1.12,
+          "unit": "g/cm³",
+          "source_section": "Page 2, Properties Cured table",
+          "raw_string": "Density - 1.12 g/cm³ DIN EN ISO 1183-1 A",
+          "confidence": "medium",
+          "is_specification": false,
+          "test_method": "DIN EN ISO 1183-1 A"
+        },
+        "flash_point": null,
+        "temperature_range": {
+          "value": "-55 to +210",
+          "unit": "°C",
+          "source_section": "Page 1, Properties",
+          "raw_string": "This product can be used within a temperature range of - 55 °C to + 210 °C.",
+          "confidence": "medium",
+          "is_specification": false,
+          "test_method": null
+        },
+        "shelf_life": {
+          "value": "Best use before end date shown on product label",
+          "unit": null,
+          "source_section": "Page 3, Storage",
+          "raw_string": "The 'Best use before end' date of each batch is shown on the product label.",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        },
+        "cure_system": {
+          "value": "Two-component, platinum-catalyzed addition cure",
+          "unit": null,
+          "source_section": "Page 1, Page 3",
+          "raw_string": "two-component compounds with short curing times",
+          "confidence": "medium",
+          "is_specification": false,
+          "test_method": null
+        }
+      },
+      "application": {
+        "main_application": "Molded Parts, Dairy & Food Applications, Sanitary, injection-molded articles",
+        "usage_restrictions": [
+          "Addition of heat stabilizers recommended at service temperatures > 180 °C",
+          "Food contact applications require appropriate processing and observance of limitations on extractable and volatile substances"
+        ],
+        "packaging_options": [
+          "20 kg pail kits",
+          "200 kg drum kits"
+        ]
+      },
+      "safety": {
+        "ghs_statements": [],
+        "un_number": null,
+        "certifications": [
+          "Food-contact",
+          "BfR Recommendation \"XV. Silicones\"",
+          "FDA 21 CFR § 177.2600"
+        ],
+        "global_inventories": [],
+        "blocked_countries": [],
+        "blocked_industries": []
+      },
+      "compliance": {
+        "wiaw_status": null,
+        "sales_advisory": null
+      },
+      "missing_attributes": [
+        "wacker_sku",
+        "material_numbers",
+        "product_url",
+        "cas_numbers",
+        "chemical_synonyms",
+        "purity",
+        "flash_point",
+        "ghs_statements",
+        "un_number",
+        "global_inventories",
+        "blocked_countries",
+        "blocked_industries",
+        "wiaw_status",
+        "sales_advisory"
+      ],
+      "extraction_warnings": [
+        "The document explicitly states that 'These figures are only intended as a guide and should not be used in preparing specifications.' for all technical data, therefore is_specification is set to false for all values from the 'Technical data' tables."
+      ]
+    }
+  },
+  {
+    "file_name": "ELASTOSIL-LR-367530-AB-TDS-en-2024.06.16.pdf",
+    "file_path": "/Users/taobehrendt/Desktop/Claude/02_Input/Wacker/ELASTOSIL®/ELASTOSIL® LR 3675:30 A:B/ELASTOSIL-LR-367530-AB-TDS-en-2024.06.16.pdf",
+    "brand": "ELASTOSIL",
+    "product_folder": "ELASTOSIL® LR 3675:30 A:B",
+    "doc_type": "Brochure",
+    "success": true,
+    "error": null,
+    "provider": "google",
+    "model": "gemini-2.5-flash",
+    "duration_ms": 23454,
+    "input_tokens": 3160,
+    "output_tokens": 2014,
+    "cache_read_tokens": 0,
+    "extraction": {
+      "document_info": {
+        "document_type": "Brochure",
+        "language": "en",
+        "manufacturer": "WACKER",
+        "brand": "ELASTOSIL",
+        "revision_date": "16.06.2024",
+        "page_count": 3
+      },
+      "identity": {
+        "product_name": "ELASTOSIL® LR 3675/30 A/B",
+        "product_line": "ELASTOSIL® LR 3675 series",
+        "wacker_sku": null,
+        "material_numbers": [],
+        "product_url": null,
+        "grade": null
+      },
+      "chemical": {
+        "cas_numbers": {
+          "value": null,
+          "unit": null,
+          "source_section": "not found",
+          "raw_string": "CAS number not found in document",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        },
+        "chemical_components": [],
+        "chemical_synonyms": [],
+        "purity": null
+      },
+      "physical": {
+        "physical_form": {
+          "value": "Liquid Silicone Rubber (LSR), paste-like",
+          "unit": null,
+          "source_section": "Page 1",
+          "raw_string": "Liquid Silicone Rubber (LSR)\nSelf-adhesive liquid silicone rubbers of the ELASTOSIL® LR 3675 series are paste-like",
+          "confidence": "medium",
+          "is_specification": false,
+          "test_method": null
+        },
+        "density": {
+          "value": 1.12,
+          "unit": "g/cm³",
+          "source_section": "Page 2, Technical data, Properties Cured table",
+          "raw_string": "1.12 g/cm³",
+          "confidence": "medium",
+          "is_specification": false,
+          "test_method": "DIN EN ISO 1183-1 A"
+        },
+        "flash_point": null,
+        "temperature_range": null,
+        "shelf_life": null,
+        "cure_system": {
+          "value": "Addition Cure (Platinum-catalyzed)",
+          "unit": null,
+          "source_section": "Page 3, Packaging and storage",
+          "raw_string": "prevent the platinum catalyst from being poisoned by amines, sulphur or phosphorus compounds.",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        }
+      },
+      "application": {
+        "main_application": "Self-adhesive liquid silicone rubbers for various plastic substrates (e.g. PA, PBT) and metals; Connector Seals; General Automotive Parts; Molded Parts; Molded Seals (Automotive); Technical applications",
+        "usage_restrictions": [
+          "Does not adhere to the mold.",
+          "Adhesion to the substrate must be tested before production."
+        ],
+        "packaging_options": [
+          "20 kg pail",
+          "200 kg drum kit",
+          "20 litre drum",
+          "200 litre drum"
+        ]
+      },
+      "safety": {
+        "ghs_statements": [],
+        "un_number": null,
+        "certifications": [],
+        "global_inventories": [],
+        "blocked_countries": [],
+        "blocked_industries": []
+      },
+      "compliance": {
+        "wiaw_status": null,
+        "sales_advisory": null
+      },
+      "missing_attributes": [
+        "wacker_sku",
+        "material_numbers",
+        "product_url",
+        "grade",
+        "cas_numbers",
+        "chemical_components",
+        "chemical_synonyms",
+        "purity",
+        "flash_point",
+        "temperature_range",
+        "shelf_life",
+        "ghs_statements",
+        "un_number",
+        "certifications",
+        "global_inventories",
+        "blocked_countries",
+        "blocked_industries",
+        "wiaw_status",
+        "sales_advisory"
+      ],
+      "extraction_warnings": [
+        "{'attribute': 'density', 'warning': \"Value is from a 'Technical data' table explicitly stated as 'only intended as a guide and should not be used in preparing specifications'. Confidence set to 'medium' and 'is_specification' to 'false'.\"}",
+        "{'attribute': 'cure_system', 'warning': \"Cure system inferred from 'platinum catalyst' mention, typical for ELASTOSIL LR products. Confidence set to 'low'.\"}"
+      ]
+    }
+  },
+  {
+    "file_name": "ELASTOSIL-4100-TDS-en-2025.07.22.pdf",
+    "file_path": "/Users/taobehrendt/Desktop/Claude/02_Input/Wacker/ELASTOSIL®/Elastosil 4100/ELASTOSIL-4100-TDS-en-2025.07.22.pdf",
+    "brand": "ELASTOSIL",
+    "product_folder": "Elastosil 4100",
+    "doc_type": "Brochure",
+    "success": true,
+    "error": null,
+    "provider": "google",
+    "model": "gemini-2.5-flash",
+    "duration_ms": 37948,
+    "input_tokens": 3989,
+    "output_tokens": 3595,
+    "cache_read_tokens": 0,
+    "extraction": {
+      "document_info": {
+        "document_type": "Brochure",
+        "language": "en",
+        "manufacturer": "Wacker Chemie AG",
+        "brand": "ELASTOSIL",
+        "revision_date": "22.07.2025",
+        "page_count": 4
+      },
+      "identity": {
+        "product_name": "ELASTOSIL® 4100",
+        "product_line": "ELASTOSIL",
+        "wacker_sku": null,
+        "material_numbers": [],
+        "product_url": "http://www.wacker.com",
+        "grade": null
+      },
+      "chemical": {
+        "cas_numbers": {
+          "value": null,
+          "unit": null,
+          "source_section": "not found",
+          "raw_string": "CAS number not found in document",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        },
+        "chemical_components": [
+          "100% silicone",
+          "acetic acid"
+        ],
+        "chemical_synonyms": [],
+        "purity": null
+      },
+      "physical": {
+        "physical_form": {
+          "value": "sealant",
+          "unit": null,
+          "source_section": "Page 1",
+          "raw_string": "silicone sealant",
+          "confidence": "medium",
+          "is_specification": false,
+          "test_method": null
+        },
+        "density": {
+          "value": 1.02,
+          "unit": "g/cm³",
+          "source_section": "Page 2",
+          "raw_string": "1.02 g/cm³",
+          "confidence": "medium",
+          "is_specification": false,
+          "test_method": "ISO 1183-1 A"
+        },
+        "flash_point": null,
+        "temperature_range": {
+          "value": "-40 °C to +180 °C",
+          "unit": "°C",
+          "source_section": "Page 1",
+          "raw_string": "flexible at low (-40 °C) and high temperatures (+180 °C)",
+          "confidence": "medium",
+          "is_specification": false,
+          "test_method": null
+        },
+        "shelf_life": {
+          "value": "long shelf life",
+          "unit": null,
+          "source_section": "Page 1",
+          "raw_string": "long shelf life",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        },
+        "cure_system": {
+          "value": "acid-curing",
+          "unit": null,
+          "source_section": "Page 1",
+          "raw_string": "acid-curing",
+          "confidence": "medium",
+          "is_specification": false,
+          "test_method": null
+        }
+      },
+      "application": {
+        "main_application": "construction, glazing and window application, sanitary applications, industrial application (automotive, aircraft, shipbuilding industries)",
+        "usage_restrictions": [
+          "must not be used as a secondary sealant for insulating glass applications",
+          "should not be used on substrates such as marble, concrete, fibrous cement, and mortar",
+          "should not be used in contact with metals such as lead, copper, brass or zinc due to corrosion",
+          "may be discolored in contact with some organic elastomers, e.g., EPDM, APTK, and neoprene",
+          "must not be used for sealing of aquaria",
+          "not suitable for applications involving contact with natural stone, such as marble, granite, and quartzite, as it can cause staining",
+          "not suitable for insulating applications or structural glazing",
+          "not recommended for sealing of aquaria or for long-term use under water",
+          "not suitable for food grade applications where the joints are likely to come in contact with food",
+          "not suitable for use as a mirror adhesive"
+        ],
+        "packaging_options": []
+      },
+      "safety": {
+        "ghs_statements": [],
+        "un_number": null,
+        "certifications": [
+          "ISO 11600 G - Class 25 LM",
+          "EN 15651-1 - Class 25 LM F-INT-EXT-CC",
+          "EN 15651-2 - Class 25 LM G-CC",
+          "EN 15651-3 - Class XS1",
+          "BS 15651-1 - Class 25 LM F-INT-EXT-CC",
+          "BS 15651-2 - Class 25 LM G-CC",
+          "BS 15651-3 - Class XS1",
+          "ASTM C 920 - Type S, Grade NS, Class 50",
+          "EMICODE EC1 PLUS",
+          "M1-Emission class"
+        ],
+        "global_inventories": [],
+        "blocked_countries": [],
+        "blocked_industries": []
+      },
+      "compliance": {
+        "wiaw_status": null,
+        "sales_advisory": null
+      },
+      "missing_attributes": [
+        "wacker_sku",
+        "material_numbers",
+        "cas_numbers",
+        "chemical_synonyms",
+        "purity",
+        "flash_point",
+        "packaging_options",
+        "ghs_statements",
+        "un_number",
+        "global_inventories",
+        "blocked_countries",
+        "blocked_industries",
+        "wiaw_status",
+        "sales_advisory"
+      ],
+      "extraction_warnings": [
+        "The document explicitly states that 'These figures are only intended as a guide and should not be used in preparing specifications.' for the technical data table. Therefore, values like Density are extracted with `is_specification: false` and `confidence: medium`.",
+        "Product URL provided is for the general Wacker website, not a specific product page.",
+        "No explicit GHS H/P statements found, only general safety advice regarding acetic acid release and contact with eyes/mucous membranes."
+      ]
+    }
+  },
+  {
+    "file_name": "ELASTOSIL-4300-TDS-en-2024.07.31.pdf",
+    "file_path": "/Users/taobehrendt/Desktop/Claude/02_Input/Wacker/ELASTOSIL®/Elastosil 4300/ELASTOSIL-4300-TDS-en-2024.07.31.pdf",
+    "brand": "ELASTOSIL",
+    "product_folder": "Elastosil 4300",
+    "doc_type": "Brochure",
+    "success": true,
+    "error": null,
+    "provider": "google",
+    "model": "gemini-2.5-flash",
+    "duration_ms": 18720,
+    "input_tokens": 3468,
+    "output_tokens": 2155,
+    "cache_read_tokens": 0,
+    "extraction": {
+      "document_info": {
+        "document_type": "Brochure",
+        "language": "en",
+        "manufacturer": "Wacker Chemie AG",
+        "brand": "ELASTOSIL",
+        "revision_date": "31.07.2024",
+        "page_count": 4
+      },
+      "identity": {
+        "product_name": "ELASTOSIL® 4300",
+        "product_line": "ELASTOSIL",
+        "wacker_sku": null,
+        "material_numbers": [],
+        "product_url": null,
+        "grade": {
+          "value": "Technical",
+          "unit": null,
+          "source_section": "Page 1, Page 3",
+          "raw_string": "construction of aquariums and industrial applications; suitable for the construction of aquariums which meet the requirements of DIN 32 622",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        }
+      },
+      "chemical": {
+        "cas_numbers": {
+          "value": null,
+          "unit": null,
+          "source_section": "not found",
+          "raw_string": "CAS number not found in document",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        },
+        "chemical_components": [
+          "silicone"
+        ],
+        "chemical_synonyms": [],
+        "purity": {
+          "value": "100",
+          "unit": "%",
+          "source_section": "Page 1",
+          "raw_string": "100% silicone",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        }
+      },
+      "physical": {
+        "physical_form": {
+          "value": "Sealant",
+          "unit": null,
+          "source_section": "Page 1",
+          "raw_string": "one-part, acid-curing, silicone sealant; non-sag; extra high paste viscosity",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        },
+        "density": {
+          "value": "1.03",
+          "unit": "g/cm³",
+          "source_section": "Page 2",
+          "raw_string": "1.03 g/cm³",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": "ISO 1183-1 A"
+        },
+        "flash_point": null,
+        "temperature_range": {
+          "value": "-40 to +150",
+          "unit": "°C",
+          "source_section": "Page 1",
+          "raw_string": "flexible at low (-40 °C) and high temperatures (+150 °C)",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        },
+        "shelf_life": null,
+        "cure_system": {
+          "value": "Acetoxy-cure",
+          "unit": null,
+          "source_section": "Page 1",
+          "raw_string": "acid-curing; Acetoxy-cure",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        }
+      },
+      "application": {
+        "main_application": "Construction of aquariums; Industrial applications; Sealing of joints exposed to high mechanical loads; Sealing of joints which need to quickly build up mechanical strength; Glazing",
+        "usage_restrictions": [
+          "Not for use on substrates such as concrete, fibrous cement and mortar (releases acetic acid during curing)",
+          "Not for use in contact with metals such as lead, copper, brass or zinc (corrosion will result)",
+          "May be discolored in contact with some organic elastomers (e.g., EPDM, APTK, neoprene)",
+          "Not recommended for use on natural stone (e.g., marble, granite, quartzite) as it can cause staining",
+          "Not recommended for structural glazing bonding"
+        ],
+        "packaging_options": []
+      },
+      "safety": {
+        "ghs_statements": [],
+        "un_number": null,
+        "certifications": [
+          "DIN 32622",
+          "ISO 11600, Klasse G 20 LM"
+        ],
+        "global_inventories": [],
+        "blocked_countries": [],
+        "blocked_industries": []
+      },
+      "compliance": {
+        "wiaw_status": null,
+        "sales_advisory": null
+      },
+      "missing_attributes": [
+        "wacker_sku",
+        "material_numbers",
+        "product_url",
+        "cas_numbers",
+        "chemical_synonyms",
+        "flash_point",
+        "packaging_options",
+        "ghs_statements",
+        "un_number",
+        "global_inventories",
+        "blocked_countries",
+        "blocked_industries",
+        "wiaw_status",
+        "sales_advisory"
+      ],
+      "extraction_warnings": []
+    }
+  },
+  {
+    "file_name": "ELASTOSIL-4710-TDS-en-2024.07.31.pdf",
+    "file_path": "/Users/taobehrendt/Desktop/Claude/02_Input/Wacker/ELASTOSIL®/Elastosil 4710/ELASTOSIL-4710-TDS-en-2024.07.31.pdf",
+    "brand": "ELASTOSIL",
+    "product_folder": "Elastosil 4710",
+    "doc_type": "Brochure",
+    "success": true,
+    "error": null,
+    "provider": "google",
+    "model": "gemini-2.5-flash",
+    "duration_ms": 30519,
+    "input_tokens": 3705,
+    "output_tokens": 3315,
+    "cache_read_tokens": 0,
+    "extraction": {
+      "document_info": {
+        "document_type": "Brochure",
+        "language": "en",
+        "manufacturer": "Wacker Chemie AG",
+        "brand": "ELASTOSIL",
+        "revision_date": "31.07.2024",
+        "page_count": 4
+      },
+      "identity": {
+        "product_name": "ELASTOSIL® 4710",
+        "product_line": "ELASTOSIL",
+        "wacker_sku": null,
+        "material_numbers": [],
+        "product_url": "http://www.wacker.com",
+        "grade": {
+          "value": "Food",
+          "unit": null,
+          "source_section": "Page 1, Page 3",
+          "raw_string": "food-contact applications, certified by NSF according ANSI 51, suitable for food contact per US Food and Drug Administration Regulations No. 21 CFR 177.1210 and 177.2600, sealing in areas where food and drinking water contact is likely",
+          "confidence": "medium",
+          "is_specification": false,
+          "test_method": null
+        }
+      },
+      "chemical": {
+        "cas_numbers": {
+          "value": null,
+          "unit": null,
+          "source_section": "not found",
+          "raw_string": "CAS number not found in document",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        },
+        "chemical_components": [
+          "silicone"
+        ],
+        "chemical_synonyms": [],
+        "purity": {
+          "value": "100",
+          "unit": "%",
+          "source_section": "Page 1",
+          "raw_string": "100% silicone",
+          "confidence": "medium",
+          "is_specification": false,
+          "test_method": null
+        }
+      },
+      "physical": {
+        "physical_form": {
+          "value": "sealant",
+          "unit": null,
+          "source_section": "Page 1",
+          "raw_string": "one-component, acid-curing silicone sealant",
+          "confidence": "medium",
+          "is_specification": false,
+          "test_method": null
+        },
+        "density": {
+          "value": "1.03",
+          "unit": "g/cm³",
+          "source_section": "Page 2, Technical data, Properties Uncured table",
+          "raw_string": "1.03 g/cm³",
+          "confidence": "medium",
+          "is_specification": false,
+          "test_method": "ISO 1183-1 A"
+        },
+        "flash_point": null,
+        "temperature_range": {
+          "value": "-40 to +180",
+          "unit": "°C",
+          "source_section": "Page 1, Properties",
+          "raw_string": "remains flexible at low (-40 °C) and high temperatures (+180 °C)",
+          "confidence": "medium",
+          "is_specification": false,
+          "test_method": null
+        },
+        "shelf_life": {
+          "value": "long",
+          "unit": null,
+          "source_section": "Page 1, Properties",
+          "raw_string": "long shelf life",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        },
+        "cure_system": {
+          "value": "Acetoxy-cure",
+          "unit": null,
+          "source_section": "Page 1, Specific features",
+          "raw_string": "Acetoxy-cure",
+          "confidence": "medium",
+          "is_specification": false,
+          "test_method": null
+        }
+      },
+      "application": {
+        "main_application": "Sealing of joints in food-contact applications",
+        "usage_restrictions": [
+          "Not for insulating glass applications",
+          "Not for use on marble, concrete, fibrous cement, mortar",
+          "Not for contact with lead, copper, brass or zinc",
+          "May discolor in contact with organic elastomers (EPDM, APTK, neoprene)",
+          "Not for contact with natural stone (marble, granite, quartzite) due to staining",
+          "Not recommended for structural glazing applications",
+          "Not recommended for sealing of aquaria or longer-term use under water",
+          "Not suitable for use as a mirror adhesive"
+        ],
+        "packaging_options": []
+      },
+      "safety": {
+        "ghs_statements": [],
+        "un_number": null,
+        "certifications": [
+          "NSF ANSI 51",
+          "US FDA Regulations No. 21 CFR 177.1210 and 177.2600",
+          "Reg. EU/1935/2004",
+          "ISEGA (62. Mtl. BfR)",
+          "ISO 11600 G - Class 25 LM",
+          "DIN 18545-2 - Class E",
+          "TT-S-00230C - Type II, Class A",
+          "BS6920 WRAS"
+        ],
+        "global_inventories": [],
+        "blocked_countries": [],
+        "blocked_industries": []
+      },
+      "compliance": {
+        "wiaw_status": null,
+        "sales_advisory": null
+      },
+      "missing_attributes": [
+        "wacker_sku",
+        "material_numbers",
+        "cas_numbers",
+        "chemical_synonyms",
+        "flash_point",
+        "packaging_options",
+        "ghs_statements",
+        "un_number",
+        "global_inventories",
+        "blocked_countries",
+        "blocked_industries",
+        "wiaw_status",
+        "sales_advisory"
+      ],
+      "extraction_warnings": [
+        "Technical data values are explicitly stated as 'only intended as a guide and should not be used in preparing specifications', therefore `is_specification` is set to `false` and confidence to `medium` for these values.",
+        "Product URL is a general Wacker website, not specific to the product.",
+        "Shelf life is described qualitatively as 'long shelf life' without a specific duration.",
+        "GHS statements are descriptive safety notes, not formal H/P codes."
+      ]
+    }
+  },
+  {
+    "file_name": "ELASTOSIL-5000-TDS-en-2024.07.31.pdf",
+    "file_path": "/Users/taobehrendt/Desktop/Claude/02_Input/Wacker/ELASTOSIL®/Elastosil 5000/ELASTOSIL-5000-TDS-en-2024.07.31.pdf",
+    "brand": "ELASTOSIL",
+    "product_folder": "Elastosil 5000",
+    "doc_type": "Brochure",
+    "success": true,
+    "error": null,
+    "provider": "google",
+    "model": "gemini-2.5-flash",
+    "duration_ms": 31853,
+    "input_tokens": 3883,
+    "output_tokens": 3760,
+    "cache_read_tokens": 0,
+    "extraction": {
+      "document_info": {
+        "document_type": "Brochure",
+        "language": "en",
+        "manufacturer": "Wacker Chemie AG",
+        "brand": "ELASTOSIL®",
+        "revision_date": "31.07.2024",
+        "page_count": 4
+      },
+      "identity": {
+        "product_name": "ELASTOSIL® 5000",
+        "product_line": "ELASTOSIL®",
+        "wacker_sku": null,
+        "material_numbers": [],
+        "product_url": "http://www.wacker.com",
+        "grade": {
+          "value": "Technical",
+          "unit": null,
+          "source_section": "Page 1 - Introduction",
+          "raw_string": "for construction and industrial applications",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        }
+      },
+      "chemical": {
+        "cas_numbers": {
+          "value": null,
+          "unit": null,
+          "source_section": "not found",
+          "raw_string": "CAS number not found in document",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        },
+        "chemical_components": [],
+        "chemical_synonyms": [],
+        "purity": null
+      },
+      "physical": {
+        "physical_form": {
+          "value": "silicone sealant, non-sag",
+          "unit": null,
+          "source_section": "Page 1 - Introduction & Properties",
+          "raw_string": "one-component, acid-curing, low-modulus silicone sealant... non-sag",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        },
+        "density": {
+          "value": "1.01",
+          "unit": "g/cm³",
+          "source_section": "Page 2 - Technical data - Properties Uncured",
+          "raw_string": "1.01 g/cm³",
+          "confidence": "medium",
+          "is_specification": false,
+          "test_method": "ISO 1183-1 A"
+        },
+        "flash_point": null,
+        "temperature_range": {
+          "value": "-40 to +160",
+          "unit": "°C",
+          "source_section": "Page 1 - Properties",
+          "raw_string": "flexible at low (-40 °C) and high temperatures (+160 °C)",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        },
+        "shelf_life": {
+          "value": "long shelf life",
+          "unit": null,
+          "source_section": "Page 1 - Properties",
+          "raw_string": "long shelf life",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        },
+        "cure_system": {
+          "value": "one-component, acid-curing, acetoxy-cure, cures at room temperature in the presence of atmospheric moisture",
+          "unit": null,
+          "source_section": "Page 1 - Introduction & Specific features",
+          "raw_string": "ELASTOSIL® 5000 is a one-component, acid-curing, low-modulus silicone sealant... ELASTOSIL® 5000 cures at room temperature in the presence of atmospheric moisture... Acetoxy-cure",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        }
+      },
+      "application": {
+        "main_application": "construction and industrial applications, Ready-to-Use Silicone Sealants - Special Applications, Sealants, Silicone Sealants, Sealing of joints between glazing and supporting structure, Glass sealing, Expansion joints",
+        "usage_restrictions": [
+          "It is the user's responsibility to test the compatibility of the sealant with the adjoining materials.",
+          "Incompatible substances like coating materials (paints, varnishes and glazes) or organic plasticizer containing rubbers (EPDM, butyl and neoprene) can lead to discoloration or other impairments like loss of adhesion of the sealant.",
+          "Materials in direct contact with the applied sealant like cleaning agents and materials in indirect contact like gaseous emissions can damage the sealant in its function or change its appearance.",
+          "ELASTOSIL® 5000 must not be used for insulating glass applications.",
+          "ELASTOSIL® 5000 should not be used on substrates such as marble, concrete, fibrous cement and mortar, as the product releases acetic acid during vulcanization.",
+          "ELASTOSIL® 5000 should not be used in contact with metals such as lead, copper, brass or zinc due to corrosion.",
+          "ELASTOSIL® 5000 may be discolored in contact with some organic elastomers, e.g. EPDM, APTK and neoprene.",
+          "ELASTOSIL® 5000 should not be used for sealing of aquaria.",
+          "ELASTOSIL® 5000 is not recommended for use on natural stone, such as marble, granite, quartzite, as it can cause staining.",
+          "ELASTOSIL® 5000 is not recommended for structural glazing bonding.",
+          "ELASTOSIL® 5000 is not recommended for sealing of aquaria or for longer-term use under water.",
+          "ELASTOSIL® 5000 is not suitable for food grade applications where the joints are likely to come in contact with food.",
+          "ELASTOSIL® 5000 is not suitable for use as a mirror adhesive."
+        ],
+        "packaging_options": []
+      },
+      "safety": {
+        "ghs_statements": [],
+        "un_number": null,
+        "certifications": [
+          "ISO 11600 G - Class 25 LM",
+          "EN 15651-1 - Class 25 LM F-INT-EXT-CC",
+          "EN 15651-2 - Class 25 LM G-CC",
+          "BS 15651-1 - Class 25 LM F-INT-EXT-CC",
+          "BS 15651-2 - Class 25 LM G-CC",
+          "DIN 18545-2 - Class E",
+          "ASTM C920: Type S, Grade NS, Class 35",
+          "EMICODE EC-1 PLUS"
+        ],
+        "global_inventories": [],
+        "blocked_countries": [],
+        "blocked_industries": []
+      },
+      "compliance": {
+        "wiaw_status": null,
+        "sales_advisory": null
+      },
+      "missing_attributes": [
+        "wacker_sku",
+        "material_numbers",
+        "cas_numbers",
+        "chemical_components",
+        "chemical_synonyms",
+        "purity",
+        "flash_point",
+        "packaging_options",
+        "ghs_statements",
+        "un_number",
+        "global_inventories",
+        "blocked_countries",
+        "blocked_industries",
+        "wiaw_status",
+        "sales_advisory"
+      ],
+      "extraction_warnings": []
+    }
+  },
+  {
+    "file_name": "ELASTOSIL-5002-TDS-en-2024.07.31.pdf",
+    "file_path": "/Users/taobehrendt/Desktop/Claude/02_Input/Wacker/ELASTOSIL®/Elastosil 5002/ELASTOSIL-5002-TDS-en-2024.07.31.pdf",
+    "brand": "ELASTOSIL",
+    "product_folder": "Elastosil 5002",
+    "doc_type": "Brochure",
+    "success": true,
+    "error": null,
+    "provider": "google",
+    "model": "gemini-2.5-flash",
+    "duration_ms": 29729,
+    "input_tokens": 3699,
+    "output_tokens": 2814,
+    "cache_read_tokens": 0,
+    "extraction": {
+      "document_info": {
+        "document_type": "Brochure",
+        "language": "en",
+        "manufacturer": "Wacker Chemie AG",
+        "brand": "ELASTOSIL",
+        "revision_date": "31.07.2024",
+        "page_count": 4
+      },
+      "identity": {
+        "product_name": "ELASTOSIL® 5002",
+        "product_line": "ELASTOSIL, Finished Sealants",
+        "wacker_sku": null,
+        "material_numbers": [],
+        "product_url": null,
+        "grade": null
+      },
+      "chemical": {
+        "cas_numbers": {
+          "value": null,
+          "unit": null,
+          "source_section": "not found",
+          "raw_string": "CAS number not found in document",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        },
+        "chemical_components": [],
+        "chemical_synonyms": [],
+        "purity": null
+      },
+      "physical": {
+        "physical_form": {
+          "value": "Paste / Sealant",
+          "unit": null,
+          "source_section": "Page 1, Page 2",
+          "raw_string": "one-component, acid-curing, low-modulus silicone sealant; non-sag",
+          "confidence": "medium",
+          "is_specification": false,
+          "test_method": null
+        },
+        "density": {
+          "value": 1.01,
+          "unit": "g/cm³",
+          "source_section": "Page 2, Technical data, Properties Uncured table",
+          "raw_string": "1.01 g/cm³",
+          "confidence": "medium",
+          "is_specification": false,
+          "test_method": "ISO 1183-1 A"
+        },
+        "flash_point": null,
+        "temperature_range": {
+          "value": "-40 to +100",
+          "unit": "°C",
+          "source_section": "Page 1, Properties",
+          "raw_string": "flexible at low (-40 °C) and high temperatures (+100 °C)",
+          "confidence": "medium",
+          "is_specification": false,
+          "test_method": null
+        },
+        "shelf_life": {
+          "value": "long",
+          "unit": null,
+          "source_section": "Page 1, Properties",
+          "raw_string": "long shelf life",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        },
+        "cure_system": {
+          "value": "Acid-curing, Acetoxy-cure, Room temperature moisture cure",
+          "unit": null,
+          "source_section": "Page 1, Properties, Specific features",
+          "raw_string": "acid-curing; cures at room temperature in the presence of atmospheric moisture; Acetoxy-cure",
+          "confidence": "high",
+          "is_specification": false,
+          "test_method": null
+        }
+      },
+      "application": {
+        "main_application": "Construction and industrial applications, Ready-to-Use Silicone Sealants - Special Applications, Sealants, Silicone Sealants, Sealing of joints between glazing and supporting structure, Glass sealing, Expansion joints",
+        "usage_restrictions": [
+          "Not for insulating glass applications",
+          "Not for use on substrates such as marble, concrete, fibrous cement and mortar, as the product releases acetic acid during vulcanization",
+          "Not for contact with metals such as lead, copper, brass or zinc due to corrosion",
+          "May be discolored in contact with some organic elastomers, e.g. EPDM, APTK and neoprene",
+          "Not for sealing of aquaria or for longer-term use under water",
+          "Not recommended for use on natural stone, such as marble, granite, quartzite, as it can cause staining",
+          "Not recommended for structural glazing bonding",
+          "Not suitable for food grade applications where the joints are likely to come in contact with food",
+          "Not suitable for use as a mirror adhesive"
+        ],
+        "packaging_options": []
+      },
+      "safety": {
+        "ghs_statements": [],
+        "un_number": null,
+        "certifications": [
+          "ISO 11600 G - Class 25 LM",
+          "EN 15651-1 - Class 25 LM",
+          "EN 15651-2 - Class 25 LM",
+          "DIN 18545-2 - Class E",
+          "EMICODE EC-1 PLUS"
+        ],
+        "global_inventories": [],
+        "blocked_countries": [],
+        "blocked_industries": []
+      },
+      "compliance": {
+        "wiaw_status": null,
+        "sales_advisory": null
+      },
+      "missing_attributes": [
+        "wacker_sku",
+        "material_numbers",
+        "product_url",
+        "grade",
+        "cas_numbers",
+        "chemical_components",
+        "chemical_synonyms",
+        "purity",
+        "flash_point",
+        "packaging_options",
+        "ghs_statements",
+        "un_number",
+        "global_inventories",
+        "blocked_countries",
+        "blocked_industries",
+        "wiaw_status",
+        "sales_advisory"
+      ],
+      "extraction_warnings": [
+        "GHS statements are described in text but not explicitly listed as H/P codes."
+      ]
+    }
+  },
+  {
+    "file_name": "ELASTOSIL-5100-TDS-en-2025.12.17.pdf",
+    "file_path": "/Users/taobehrendt/Desktop/Claude/02_Input/Wacker/ELASTOSIL®/Elastosil 5100/ELASTOSIL-5100-TDS-en-2025.12.17.pdf",
+    "brand": "ELASTOSIL",
+    "product_folder": "Elastosil 5100",
+    "doc_type": "Brochure",
+    "success": true,
+    "error": null,
+    "provider": "google",
+    "model": "gemini-2.5-flash",
+    "duration_ms": 17211,
+    "input_tokens": 3707,
+    "output_tokens": 3212,
+    "cache_read_tokens": 0,
+    "extraction": {
+      "document_info": {
+        "document_type": "Brochure",
+        "language": "en",
+        "manufacturer": "Wacker Chemie AG",
+        "brand": "ELASTOSIL",
+        "revision_date": "17.12.2025",
+        "page_count": 4
+      },
+      "identity": {
+        "product_name": "ELASTOSIL® 5100",
+        "product_line": "ELASTOSIL",
+        "wacker_sku": null,
+        "material_numbers": [],
+        "product_url": null,
+        "grade": null
+      },
+      "chemical": {
+        "cas_numbers": {
+          "value": null,
+          "unit": null,
+          "source_section": "not found",
+          "raw_string": "CAS number not found in document",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        },
+        "chemical_components": [],
+        "chemical_synonyms": [],
+        "purity": null
+      },
+      "physical": {
+        "physical_form": {
+          "value": "Sealant",
+          "unit": null,
+          "source_section": "Page 1",
+          "raw_string": "silicone sealant",
+          "confidence": "medium",
+          "is_specification": false,
+          "test_method": null
+        },
+        "density": {
+          "value": 1.01,
+          "unit": "g/cm³",
+          "source_section": "Page 2",
+          "raw_string": "1.01 g/cm³",
+          "confidence": "medium",
+          "is_specification": false,
+          "test_method": "ISO 1183-1 A"
+        },
+        "flash_point": null,
+        "temperature_range": {
+          "value": "-40 to +160",
+          "unit": "°C",
+          "source_section": "Page 1",
+          "raw_string": "flexible at low (- 40 °C) and high temperatures (+ 160 °C)",
+          "confidence": "medium",
+          "is_specification": false,
+          "test_method": null
+        },
+        "shelf_life": {
+          "value": "long shelf life",
+          "unit": null,
+          "source_section": "Page 1",
+          "raw_string": "long shelf life",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        },
+        "cure_system": {
+          "value": "Acetoxy-cure",
+          "unit": null,
+          "source_section": "Page 1",
+          "raw_string": "Acetoxy-cure",
+          "confidence": "medium",
+          "is_specification": false,
+          "test_method": null
+        }
+      },
+      "application": {
+        "main_application": "Construction, industrial, sanitary applications, sealing of joints between glazing and supporting structure, glass sealing, expansion joints, ready-to-use silicone sealants, special applications.",
+        "usage_restrictions": [
+          "Not for insulating glass applications.",
+          "Not for structural glazing bonding.",
+          "Not recommended for use on natural stones (e.g., marble, granite, quartzite) as it can cause staining.",
+          "Should not be used on substrates such as concrete, fibrous cement, and mortar, due to acetic acid release.",
+          "Should not be used in contact with metals such as lead, copper, brass or zinc due to corrosion.",
+          "Not recommended for sealing of aquaria or for longer-term use under water.",
+          "Not suitable for food grade applications where joints are likely to come in contact with food.",
+          "Not suitable for use as a mirror adhesive.",
+          "Incompatible substances like coating materials (paints, varnishes and glazes) or organic plasticizer containing rubbers (EPDM, butyl and neoprene) can lead to discoloration or other impairments.",
+          "Materials in direct contact with the applied sealant like cleaning agents and materials in indirect contact like gaseous emissions can damage the sealant."
+        ],
+        "packaging_options": []
+      },
+      "safety": {
+        "ghs_statements": [],
+        "un_number": null,
+        "certifications": [
+          "ISO 11600 G - Class 25 LM",
+          "EN 15651-1 - Class 25 LM F-INT-EXT-CC",
+          "EN 15651-2 - Class 25 LM G-CC",
+          "EN 15651-3 - Class XS1",
+          "DIN 18545-2 - Class E",
+          "ASTM C920 - S-NS-35",
+          "EMICODE EC-1 PLUS"
+        ],
+        "global_inventories": [],
+        "blocked_countries": [],
+        "blocked_industries": []
+      },
+      "compliance": {
+        "wiaw_status": null,
+        "sales_advisory": null
+      },
+      "missing_attributes": [
+        "wacker_sku",
+        "material_numbers",
+        "product_url",
+        "cas_numbers",
+        "chemical_components",
+        "chemical_synonyms",
+        "purity",
+        "flash_point",
+        "packaging_options",
+        "ghs_statements",
+        "un_number",
+        "global_inventories",
+        "blocked_countries",
+        "blocked_industries",
+        "wiaw_status",
+        "sales_advisory"
+      ],
+      "extraction_warnings": [
+        "Acetic acid vapors are released during vulcanization and should not be inhaled for long periods or in high concentration. Good ventilation is necessary. Uncured silicone rubber in contact with eyes/mucous membranes should be rinsed thoroughly with water. Keep away from children."
+      ]
+    }
+  },
+  {
+    "file_name": "ELASTOSIL-5605-TDS-en-2024.06.16.pdf",
+    "file_path": "/Users/taobehrendt/Desktop/Claude/02_Input/Wacker/ELASTOSIL®/Elastosil 5605/ELASTOSIL-5605-TDS-en-2024.06.16.pdf",
+    "brand": "ELASTOSIL",
+    "product_folder": "Elastosil 5605",
+    "doc_type": "Brochure",
+    "success": true,
+    "error": null,
+    "provider": "google",
+    "model": "gemini-2.5-flash",
+    "duration_ms": 14278,
+    "input_tokens": 2610,
+    "output_tokens": 2389,
+    "cache_read_tokens": 0,
+    "extraction": {
+      "document_info": {
+        "document_type": "Brochure",
+        "language": "en",
+        "manufacturer": "Wacker Chemie AG",
+        "brand": "ELASTOSIL",
+        "revision_date": "16.06.2024",
+        "page_count": 3
+      },
+      "identity": {
+        "product_name": "ELASTOSIL® 5605",
+        "product_line": "ELASTOSIL®",
+        "wacker_sku": null,
+        "material_numbers": [],
+        "product_url": "http://www.wacker.com",
+        "grade": null
+      },
+      "chemical": {
+        "cas_numbers": {
+          "value": null,
+          "unit": null,
+          "source_section": "not found",
+          "raw_string": "CAS number not found in document",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        },
+        "chemical_components": [],
+        "chemical_synonyms": [],
+        "purity": null
+      },
+      "physical": {
+        "physical_form": {
+          "value": "Sealant",
+          "unit": null,
+          "source_section": "Page 1",
+          "raw_string": "one-component, acid-curing, silicone sealant",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        },
+        "density": null,
+        "flash_point": null,
+        "temperature_range": {
+          "value": "-40 to +100",
+          "unit": "°C",
+          "source_section": "Page 1",
+          "raw_string": "flexible at low (- 40 °C) and high temperatures (+ 100 °C)",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        },
+        "shelf_life": null,
+        "cure_system": {
+          "value": "Acid-curing, moisture-curing",
+          "unit": null,
+          "source_section": "Page 1",
+          "raw_string": "one-component, acid-curing, silicone sealant for applications where special transparancy is required. ELASTOSIL® 5605 cures at room temperature in the presence of atmospheric moisture to give a permanently flexible silicone rubber.",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        }
+      },
+      "application": {
+        "main_application": "Sealing for Glas cabinets and applications where a special transparancy is required; Ready-to-Use Silicone Sealants - Special Applications; Sealants; Silicone Sealants",
+        "usage_restrictions": [
+          "Limited mechanical strength, not suitable for load-bearing adhesions.",
+          "Not compatible with carbonate containing stone (e.g., marble and limestone) due to acetic acid release.",
+          "Should not be used on substrates such as concrete, fibrous cement, and mortar due to acetic acid release.",
+          "Should not be used in contact with metals such as lead, copper, brass or zinc due to corrosion.",
+          "Should not be used in contact with prestressed polyacrylate elements as it may cause stress cracking.",
+          "May be discolored in contact with some organic elastomers (e.g., EPDM, APTK and neoprene).",
+          "Not recommended for use on natural stone (e.g., marble, granite, quartzite) as it can cause staining.",
+          "Not recommended for insulated- and structural glazing or bonding.",
+          "Not recommended for sealing of aquaria or for longer-term use under water.",
+          "Not suitable for food grade applications where the joints are likely to come in contact with food.",
+          "Not suitable for use as a mirror adhesive."
+        ],
+        "packaging_options": []
+      },
+      "safety": {
+        "ghs_statements": [],
+        "un_number": null,
+        "certifications": [],
+        "global_inventories": [],
+        "blocked_countries": [],
+        "blocked_industries": []
+      },
+      "compliance": {
+        "wiaw_status": null,
+        "sales_advisory": null
+      },
+      "missing_attributes": [
+        "wacker_sku",
+        "cas_numbers",
+        "chemical_components",
+        "chemical_synonyms",
+        "purity",
+        "density",
+        "flash_point",
+        "ghs_statements",
+        "un_number",
+        "certifications",
+        "global_inventories",
+        "blocked_countries",
+        "blocked_industries",
+        "wiaw_status",
+        "sales_advisory"
+      ],
+      "extraction_warnings": []
+    }
+  },
+  {
+    "file_name": "ELASTOSIL-6000-TDS-en-2024.07.31.pdf",
+    "file_path": "/Users/taobehrendt/Desktop/Claude/02_Input/Wacker/ELASTOSIL®/Elastosil 6000/ELASTOSIL-6000-TDS-en-2024.07.31.pdf",
+    "brand": "ELASTOSIL",
+    "product_folder": "Elastosil 6000",
+    "doc_type": "Brochure",
+    "success": true,
+    "error": null,
+    "provider": "google",
+    "model": "gemini-2.5-flash",
+    "duration_ms": 18023,
+    "input_tokens": 3617,
+    "output_tokens": 2580,
+    "cache_read_tokens": 0,
+    "extraction": {
+      "document_info": {
+        "document_type": "Brochure",
+        "language": "en",
+        "manufacturer": "Wacker",
+        "brand": "ELASTOSIL",
+        "revision_date": "31.07.2024",
+        "page_count": 4
+      },
+      "identity": {
+        "product_name": "ELASTOSIL® 6000",
+        "product_line": "ELASTOSIL",
+        "wacker_sku": null,
+        "material_numbers": [],
+        "product_url": null,
+        "grade": {
+          "value": "Technical",
+          "unit": null,
+          "source_section": "Page 1, ELASTOSIL® 6000",
+          "raw_string": "ELASTOSIL® 6000 is a one-component, acid-curing, silicone sealant for general purpose sealing in do-it-yourself applications.",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        }
+      },
+      "chemical": {
+        "cas_numbers": {
+          "value": null,
+          "unit": null,
+          "source_section": "not found",
+          "raw_string": "CAS number not found in document",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        },
+        "chemical_components": [],
+        "chemical_synonyms": [],
+        "purity": null
+      },
+      "physical": {
+        "physical_form": {
+          "value": "Silicone Sealant",
+          "unit": null,
+          "source_section": "Page 1, ELASTOSIL® 6000",
+          "raw_string": "ELASTOSIL® 6000 is a one-component, acid-curing, silicone sealant for general purpose sealing in do-it-yourself applications.",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        },
+        "density": {
+          "value": 0.98,
+          "unit": "g/cm³",
+          "source_section": "Page 2, Technical data - Properties Uncured",
+          "raw_string": "0.98 g/cm³",
+          "confidence": "medium",
+          "is_specification": false,
+          "test_method": "ISO 1183-1 A"
+        },
+        "flash_point": null,
+        "temperature_range": {
+          "value": "-40 to +100",
+          "unit": "°C",
+          "source_section": "Page 1, Properties",
+          "raw_string": "flexible at low (- 40 °C) and high temperatures (+ 100 °C)",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        },
+        "shelf_life": null,
+        "cure_system": {
+          "value": "Acid-curing (Acetoxy-cure)",
+          "unit": null,
+          "source_section": "Page 1, ELASTOSIL® 6000; Page 1, Specific features",
+          "raw_string": "acid-curing; Acetoxy-cure",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        }
+      },
+      "application": {
+        "main_application": "General purpose sealing in do-it-yourself applications (car, boat, caravan, house); Ready-to-Use Silicone Sealants - General Applications",
+        "usage_restrictions": [
+          "Not compatible with carbonate containing stone e.g. marble and limestone",
+          "Should not be used on substrates such as concrete, fibrous cement, and mortar",
+          "Should not be used in contact with metals such as lead, copper, brass or zinc due to corrosion",
+          "Should not be used in contact with prestressed polyacrylate elements as it may cause stress cracking",
+          "May be discolored in contact with some organic elastomers, e.g. EPDM, APTK and neoprene",
+          "Not recommended for use on natural stone, such as marble, granite, quartzite, as it can cause staining",
+          "Not recommended for insulated- and structural glazing or bonding",
+          "Not recommended for sealing of aquaria or for longer-term use under water",
+          "Not suitable for food grade applications where the joints are likely to come in contact with food",
+          "Not suitable for use as a mirror adhesive"
+        ],
+        "packaging_options": []
+      },
+      "safety": {
+        "ghs_statements": [],
+        "un_number": null,
+        "certifications": [
+          "EN 15651-1 - F-EXT-INT-CC class 12.5 E",
+          "EMICODE EC1"
+        ],
+        "global_inventories": [],
+        "blocked_countries": [],
+        "blocked_industries": []
+      },
+      "compliance": {
+        "wiaw_status": null,
+        "sales_advisory": null
+      },
+      "missing_attributes": [
+        "wacker_sku",
+        "material_numbers",
+        "product_url",
+        "cas_numbers",
+        "chemical_components",
+        "chemical_synonyms",
+        "purity",
+        "flash_point",
+        "shelf_life",
+        "packaging_options",
+        "ghs_statements",
+        "un_number",
+        "global_inventories",
+        "blocked_countries",
+        "blocked_industries",
+        "wiaw_status",
+        "sales_advisory"
+      ],
+      "extraction_warnings": [
+        "The 'Technical data' tables explicitly state: 'These figures are only intended as a guide and should not be used in preparing specifications.' Therefore, values from these tables are marked with confidence 'medium' and 'is_specification: false'."
+      ]
+    }
+  },
+  {
+    "file_name": "ELASTOSIL-6100-TDS-en-2024.06.16.pdf",
+    "file_path": "/Users/taobehrendt/Desktop/Claude/02_Input/Wacker/ELASTOSIL®/Elastosil 6100/ELASTOSIL-6100-TDS-en-2024.06.16.pdf",
+    "brand": "ELASTOSIL",
+    "product_folder": "Elastosil 6100",
+    "doc_type": "Brochure",
+    "success": true,
+    "error": null,
+    "provider": "google",
+    "model": "gemini-2.5-flash",
+    "duration_ms": 18759,
+    "input_tokens": 3689,
+    "output_tokens": 3015,
+    "cache_read_tokens": 0,
+    "extraction": {
+      "document_info": {
+        "document_type": "Brochure",
+        "language": "en",
+        "manufacturer": "Wacker Chemie AG",
+        "brand": "ELASTOSIL",
+        "revision_date": "16.06.2024",
+        "page_count": 4
+      },
+      "identity": {
+        "product_name": "ELASTOSIL® 6100",
+        "product_line": "ELASTOSIL",
+        "wacker_sku": null,
+        "material_numbers": [],
+        "product_url": "http://www.wacker.com",
+        "grade": {
+          "value": "Technical",
+          "unit": null,
+          "source_section": "Page 3",
+          "raw_string": "ELASTOSIL® 6100 is not suitable for food grade applications where the joints are likely to come in contact with food.",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        }
+      },
+      "chemical": {
+        "cas_numbers": {
+          "value": null,
+          "unit": null,
+          "source_section": "not found",
+          "raw_string": "CAS number not found in document",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        },
+        "chemical_components": [
+          "silicone sealant",
+          "silicone rubber",
+          "acetic acid"
+        ],
+        "chemical_synonyms": [],
+        "purity": null
+      },
+      "physical": {
+        "physical_form": {
+          "value": "sealant",
+          "unit": null,
+          "source_section": "Page 1",
+          "raw_string": "ELASTOSIL® 6100 is a one-component, acid-curing, silicone sealant",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        },
+        "density": {
+          "value": 0.98,
+          "unit": "g/cm³",
+          "source_section": "Page 2, Technical data table",
+          "raw_string": "0.98 g/cm³",
+          "confidence": "medium",
+          "is_specification": false,
+          "test_method": "ISO 1183-1 A"
+        },
+        "flash_point": null,
+        "temperature_range": {
+          "value": "-40 to +100",
+          "unit": "°C",
+          "source_section": "Page 1, Properties",
+          "raw_string": "flexible at low (- 40 °C) and high temperatures (+ 100 °C) following cure",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        },
+        "shelf_life": {
+          "value": "Best use before end date shown on product label",
+          "unit": null,
+          "source_section": "Page 3, Packaging and storage",
+          "raw_string": "The 'Best use before end' date of each batch is shown on the product label.",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        },
+        "cure_system": {
+          "value": "acid-curing (Acetoxy-cure)",
+          "unit": null,
+          "source_section": "Page 1, Properties & Specific features",
+          "raw_string": "acid-curing, silicone sealant",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        }
+      },
+      "application": {
+        "main_application": "General purpose sealing in do-it-yourself applications, especially for sanitary areas; Ready-to-Use Silicone Sealants - General Applications; Sealants; Silicone Sealants; DIY applications (car, boat, caravan, house); Sealing in sanitary areas",
+        "usage_restrictions": [
+          "Not compatible with carbonate containing stone e.g. marble and limestone",
+          "Should not be used on substrates such as concrete, fibrous cement and mortar",
+          "Should not be used in contact with metals such as lead, copper, brass or zinc due to corrosion",
+          "May be discolored in contact with some organic elastomers, e.g. EPDM and neoprene",
+          "Not recommended for sealing of aquarium or for long term use under water",
+          "Should not be used on pre-stressed polyacrylate elements as it may cause environmental stress cracking",
+          "Must not be used for insulated- and structural glazing or bonding",
+          "Not suitable for food grade applications where the joints are likely to come in contact with food",
+          "Not suitable for use as a mirror adhesive"
+        ],
+        "packaging_options": [
+          "Standard size cartridges"
+        ]
+      },
+      "safety": {
+        "ghs_statements": [],
+        "un_number": null,
+        "certifications": [
+          "EN 15651-1 - F-EXT-INT-CC Class 12,5 E",
+          "EN 15651-3 - Class XS1",
+          "EMICODE EC-1"
+        ],
+        "global_inventories": [],
+        "blocked_countries": [],
+        "blocked_industries": []
+      },
+      "compliance": {
+        "wiaw_status": null,
+        "sales_advisory": null
+      },
+      "missing_attributes": [
+        "wacker_sku",
+        "material_numbers",
+        "cas_numbers",
+        "chemical_synonyms",
+        "purity",
+        "flash_point",
+        "un_number",
+        "global_inventories",
+        "blocked_countries",
+        "blocked_industries",
+        "wiaw_status",
+        "sales_advisory"
+      ],
+      "extraction_warnings": [
+        "The document states: 'These figures are only intended as a guide and should not be used in preparing specifications.' for the technical data tables, confirming that extracted physical properties are not specifications.",
+        "Safety notes are provided (e.g., 'vapors should not be inhaled', 'rinse thoroughly with water' for eye/mucous membrane contact, 'avoid prolonged contact of uncured sealant with the skin', 'Keep away from children') but are not formal GHS H/P statements."
+      ]
+    }
+  },
+  {
+    "file_name": "ELASTOSIL-E4-TDS-en-2026.01.23.pdf",
+    "file_path": "/Users/taobehrendt/Desktop/Claude/02_Input/Wacker/ELASTOSIL®/Elastosil E4/ELASTOSIL-E4-TDS-en-2026.01.23.pdf",
+    "brand": "ELASTOSIL",
+    "product_folder": "Elastosil E4",
+    "doc_type": "Brochure",
+    "success": true,
+    "error": null,
+    "provider": "google",
+    "model": "gemini-2.5-flash",
+    "duration_ms": 20188,
+    "input_tokens": 2728,
+    "output_tokens": 1764,
+    "cache_read_tokens": 0,
+    "extraction": {
+      "document_info": {
+        "document_type": "Brochure",
+        "language": "en",
+        "manufacturer": "Wacker Chemie AG",
+        "brand": "ELASTOSIL",
+        "revision_date": "23.01.2026",
+        "page_count": 3
+      },
+      "identity": {
+        "product_name": "ELASTOSIL® E4",
+        "product_line": "ELASTOSIL",
+        "wacker_sku": null,
+        "material_numbers": [],
+        "product_url": "http://www.wacker.com",
+        "grade": null
+      },
+      "chemical": {
+        "cas_numbers": {
+          "value": null,
+          "unit": null,
+          "source_section": "not found",
+          "raw_string": "CAS number not found in document",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        },
+        "chemical_components": [],
+        "chemical_synonyms": [],
+        "purity": null
+      },
+      "physical": {
+        "physical_form": {
+          "value": "non-slump, one-component silicone rubber",
+          "unit": null,
+          "source_section": "Page 1",
+          "raw_string": "ELASTOSIL® E4 is a non-slump, acetoxy-cure one-component silicone rubber",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        },
+        "density": {
+          "value": 1.01,
+          "unit": "g/cm³",
+          "source_section": "Page 2",
+          "raw_string": "Density - 1.01 g/cm³ DIN EN ISO 1183-1 A",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": "DIN EN ISO 1183-1 A"
+        },
+        "flash_point": null,
+        "temperature_range": {
+          "value": "permanent up to 180°C, peak up to 200°C",
+          "unit": "°C",
+          "source_section": "Page 1",
+          "raw_string": "good heat stability: permanent temperatures up to 180°C and peak temperatures up to 200°C",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        },
+        "shelf_life": null,
+        "cure_system": {
+          "value": "Acetoxy, Moisture Curing, RTV-1",
+          "unit": null,
+          "source_section": "Page 1",
+          "raw_string": "Moisture Curing Silicone Rubber (RTV-1), acetoxy-cure one-component silicone rubber, acetoxy-cure RTV-1",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        }
+      },
+      "application": {
+        "main_application": "['Appliances Industry', 'Bonding & Sealing', 'Cured-In-Place-Gaskets (Dry Type)', 'E-Mobility', 'Formed-In-Place-Gaskets (Wet Type)', 'Heating & Cooling', 'Lighting', 'Machine Building', 'Railway Industry', 'Multipurpose sealant and adhesive where low hardness/low modulus is needed for high movement capability']",
+        "usage_restrictions": [
+          "Vapours (acetic acid) should not be inhaled for long periods or in high concentration; work areas should be well ventilated.",
+          "Contact of unvulcanized silicone rubber with eyes and mucous membranes must be avoided as this would cause irritation."
+        ],
+        "packaging_options": []
+      },
+      "safety": {
+        "ghs_statements": [],
+        "un_number": null,
+        "certifications": [],
+        "global_inventories": [],
+        "blocked_countries": [],
+        "blocked_industries": []
+      },
+      "compliance": {
+        "wiaw_status": null,
+        "sales_advisory": null
+      },
+      "missing_attributes": [
+        "wacker_sku",
+        "material_numbers",
+        "grade",
+        "cas_numbers",
+        "chemical_components",
+        "chemical_synonyms",
+        "purity",
+        "flash_point",
+        "shelf_life",
+        "packaging_options",
+        "ghs_statements",
+        "un_number",
+        "certifications",
+        "global_inventories",
+        "blocked_countries",
+        "blocked_industries",
+        "wiaw_status",
+        "sales_advisory"
+      ],
+      "extraction_warnings": [
+        "Two density values are provided (uncured: 1.01 g/cm³, cured: 1.02 g/cm³). The uncured density was chosen for the primary density attribute. Both values are explicitly stated as guides and not for specifications.",
+        "The document provides a general Wacker website URL, not a specific product URL for ELASTOSIL® E4.",
+        "Shelf life is mentioned as being on the product label, but no specific duration is provided in the document."
+      ]
+    }
+  },
+  {
+    "file_name": "FERMOPURE-L-Cysteine-PHARMA-TDS-en-2025.04.10.pdf",
+    "file_path": "/Users/taobehrendt/Desktop/Claude/02_Input/Wacker/FERMOPURE®/FERMOPURE® L-Cysteine PHARMA/FERMOPURE-L-Cysteine-PHARMA-TDS-en-2025.04.10.pdf",
+    "brand": "FERMOPURE",
+    "product_folder": "FERMOPURE® L-Cysteine PHARMA",
+    "doc_type": "Brochure",
+    "success": true,
+    "error": null,
+    "provider": "google",
+    "model": "gemini-2.5-flash",
+    "duration_ms": 22601,
+    "input_tokens": 3232,
+    "output_tokens": 2338,
+    "cache_read_tokens": 0,
+    "extraction": {
+      "document_info": {
+        "document_type": "Brochure",
+        "language": "en",
+        "manufacturer": "WACKER",
+        "brand": "FERMOPURE",
+        "revision_date": "10.04.2025",
+        "page_count": 3
+      },
+      "identity": {
+        "product_name": "FERMOPURE® L-Cysteine PHARMA",
+        "product_line": "FERMOPURE, Amino Acids",
+        "wacker_sku": null,
+        "material_numbers": [],
+        "product_url": "http://www.wacker.com",
+        "grade": {
+          "value": "PHARMA",
+          "unit": null,
+          "source_section": "Page 1",
+          "raw_string": "FERMOPURE® L-Cysteine PHARMA",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        }
+      },
+      "chemical": {
+        "cas_numbers": {
+          "value": "7048-04-6",
+          "unit": null,
+          "source_section": "Page 1",
+          "raw_string": "CAS No. 7048-04-6",
+          "confidence": "high",
+          "is_specification": false,
+          "test_method": null
+        },
+        "chemical_components": [
+          "L-Cysteine Hydrochloride Monohydrate",
+          "L-Cysteine",
+          "sulfur",
+          "L-Cystine"
+        ],
+        "chemical_synonyms": [
+          "L-Cysteine Hydrochloride Monohydrate"
+        ],
+        "purity": {
+          "value": "98.5 - 101.0",
+          "unit": "%",
+          "source_section": "Page 2, Technical data, Specification table",
+          "raw_string": "98.5 - 101.0 %",
+          "confidence": "high",
+          "is_specification": true,
+          "test_method": "PH. EUR."
+        }
+      },
+      "physical": {
+        "physical_form": {
+          "value": "white or almost white, crystalline powder or colourless crystals",
+          "unit": null,
+          "source_section": "Page 1",
+          "raw_string": "L-CYSTEIN PHARMA is a white or almost white, crystalline powder or colourless crystals",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        },
+        "density": null,
+        "flash_point": null,
+        "temperature_range": {
+          "value": "25°C (recommended) to 40°C (up to 180 days)",
+          "unit": "°C",
+          "source_section": "Page 3, Packaging and storage, Storage",
+          "raw_string": "a temperature of 25°C is recommended for optimal product quality, but 40°C up to 180 days does not affect the quality.",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        },
+        "shelf_life": {
+          "value": "24",
+          "unit": "months",
+          "source_section": "Page 3, Packaging and storage, Storage",
+          "raw_string": "shelf life of at least 24 months",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        },
+        "cure_system": null
+      },
+      "application": {
+        "main_application": "['Building Blocks for Synthesis (Pharma)', 'Hair-Perm Formulations', 'Personal Care', 'Pharma', 'Excipient for API synthesis, e.g. expectorants', 'Process aid in insulin fermentation', 'Essential ingredient in cell culture media']",
+        "usage_restrictions": [],
+        "packaging_options": [
+          "25"
+        ]
+      },
+      "safety": {
+        "ghs_statements": [],
+        "un_number": null,
+        "certifications": [
+          "Complies with current Eur.Ph. and USP specifications",
+          "BSE/TSE-free",
+          "kosher",
+          "halal"
+        ],
+        "global_inventories": [],
+        "blocked_countries": [],
+        "blocked_industries": []
+      },
+      "compliance": {
+        "wiaw_status": null,
+        "sales_advisory": null
+      },
+      "missing_attributes": [
+        "wacker_sku",
+        "material_numbers",
+        "flash_point",
+        "cure_system",
+        "ghs_statements",
+        "un_number",
+        "global_inventories",
+        "blocked_countries",
+        "blocked_industries",
+        "wiaw_status",
+        "sales_advisory",
+        "usage_restrictions"
+      ],
+      "extraction_warnings": [
+        "The document states 'Complies with current Eur.Ph. and USP specifications' on Page 1, and the specification table on Page 2 uses 'PH. EUR.' methods. This confirms the Pharma grade classification."
+      ]
+    }
+  },
+  {
+    "file_name": "FERMOPURE-Natural-L-Cystine-FOOD-TDS-en-2024.06.16.pdf",
+    "file_path": "/Users/taobehrendt/Desktop/Claude/02_Input/Wacker/FERMOPURE®/FERMOPURE® Natural L-Cystine FOOD/FERMOPURE-Natural-L-Cystine-FOOD-TDS-en-2024.06.16.pdf",
+    "brand": "FERMOPURE",
+    "product_folder": "FERMOPURE® Natural L-Cystine FOOD",
+    "doc_type": "Brochure",
+    "success": true,
+    "error": null,
+    "provider": "google",
+    "model": "gemini-2.5-flash",
+    "duration_ms": 18309,
+    "input_tokens": 3049,
+    "output_tokens": 1702,
+    "cache_read_tokens": 0,
+    "extraction": {
+      "document_info": {
+        "document_type": "Brochure",
+        "language": "en",
+        "manufacturer": "WACKER",
+        "brand": "FERMOPURE",
+        "revision_date": "16.06.2024",
+        "page_count": 3
+      },
+      "identity": {
+        "product_name": "FERMOPURE® Natural L-Cystine FOOD",
+        "product_line": "FERMOPURE",
+        "wacker_sku": null,
+        "material_numbers": [],
+        "product_url": "http://www.wacker.com",
+        "grade": {
+          "value": "FOOD",
+          "unit": null,
+          "source_section": "Page 1",
+          "raw_string": "FERMOPURE® Natural L-Cystine FOOD",
+          "confidence": "high",
+          "is_specification": false,
+          "test_method": null
+        }
+      },
+      "chemical": {
+        "cas_numbers": {
+          "value": "56-89-3",
+          "unit": null,
+          "source_section": "Page 1",
+          "raw_string": "CAS No. 56-89-3",
+          "confidence": "high",
+          "is_specification": true,
+          "test_method": null
+        },
+        "chemical_components": [
+          "L-Cystine"
+        ],
+        "chemical_synonyms": [],
+        "purity": {
+          "value": "98.5 - 101.5",
+          "unit": "%",
+          "source_section": "Page 2, Technical data, Specification table",
+          "raw_string": "98.5 - 101.5 %",
+          "confidence": "high",
+          "is_specification": true,
+          "test_method": "PH. EUR. (2.2.20)"
+        }
+      },
+      "physical": {
+        "physical_form": {
+          "value": "white or almost white, crystalline powder",
+          "unit": null,
+          "source_section": "Page 1",
+          "raw_string": "FERMOPURE® Natural L-Cystine Food is a white or almost white, crystalline powder",
+          "confidence": "medium",
+          "is_specification": false,
+          "test_method": null
+        },
+        "density": null,
+        "flash_point": null,
+        "temperature_range": {
+          "value": "25-40",
+          "unit": "°C",
+          "source_section": "Page 3, Storage",
+          "raw_string": "a temperature of 25°C is recommended for optimal product quality, but 40°C up to 180 days does not affect the quality",
+          "confidence": "medium",
+          "is_specification": false,
+          "test_method": null
+        },
+        "shelf_life": {
+          "value": "36",
+          "unit": "months",
+          "source_section": "Page 3, Storage",
+          "raw_string": "shelf life of at least 36 months",
+          "confidence": "medium",
+          "is_specification": false,
+          "test_method": null
+        },
+        "cure_system": null
+      },
+      "application": {
+        "main_application": "Dough Softening, Savory Flavors, production of savory flavours, processed flavors where a Maillard reaction is involved",
+        "usage_restrictions": [],
+        "packaging_options": [
+          "25 kg"
+        ]
+      },
+      "safety": {
+        "ghs_statements": [],
+        "un_number": null,
+        "certifications": [
+          "PH. EUR."
+        ],
+        "global_inventories": [],
+        "blocked_countries": [],
+        "blocked_industries": []
+      },
+      "compliance": {
+        "wiaw_status": null,
+        "sales_advisory": null
+      },
+      "missing_attributes": [
+        "wacker_sku",
+        "material_numbers",
+        "chemical_synonyms",
+        "density",
+        "flash_point",
+        "cure_system",
+        "ghs_statements",
+        "un_number",
+        "global_inventories",
+        "blocked_countries",
+        "blocked_industries",
+        "wiaw_status",
+        "sales_advisory"
+      ],
+      "extraction_warnings": [
+        "The document is a brochure, but it contains an explicitly labeled 'Specification' table. Values from this table (e.g., Purity, Certifications) are treated as 'is_specification: true' and 'confidence: high', overriding the general brochure rule of 'Never set is_specification: true' for brochure data.",
+        "PH. EUR. is listed as a method in the specification table, implying compliance with European Pharmacopoeia standards for these tests, and is therefore extracted as a certification, despite being a method reference."
+      ]
+    }
+  },
+  {
+    "file_name": "FERMOPURE-VEGAN-L-CYSTEIN-FOOD-20-Low-Perchlorate-TDS-en-2025.10.15.pdf",
+    "file_path": "/Users/taobehrendt/Desktop/Claude/02_Input/Wacker/FERMOPURE®/FERMOPURE® VEGAN L-CYSTEIN FOOD 20 Low Perchlorate/FERMOPURE-VEGAN-L-CYSTEIN-FOOD-20-Low-Perchlorate-TDS-en-2025.10.15.pdf",
+    "brand": "FERMOPURE",
+    "product_folder": "FERMOPURE® VEGAN L-CYSTEIN FOOD 20 Low Perchlorate",
+    "doc_type": "SDS",
+    "success": true,
+    "error": null,
+    "provider": "google",
+    "model": "gemini-2.5-flash",
+    "duration_ms": 27881,
+    "input_tokens": 2924,
+    "output_tokens": 1709,
+    "cache_read_tokens": 0,
+    "extraction": {
+      "document_info": {
+        "document_type": "SDS",
+        "language": "en",
+        "manufacturer": "WACKER",
+        "brand": "FERMOPURE",
+        "revision_date": "15.10.2025",
+        "page_count": 3
+      },
+      "identity": {
+        "product_name": "FERMOPURE® VEGAN L-CYSTEIN FOOD 20 Low Perchlorate",
+        "product_line": "FERMOPURE",
+        "wacker_sku": null,
+        "material_numbers": [],
+        "product_url": "http://www.wacker.com",
+        "grade": {
+          "value": "FOOD 20 Low Perchlorate",
+          "unit": null,
+          "source_section": "Page 1",
+          "raw_string": "FERMOPURE® VEGAN L-CYSTEIN FOOD 20 Low Perchlorate",
+          "confidence": "high",
+          "is_specification": false,
+          "test_method": null
+        }
+      },
+      "chemical": {
+        "cas_numbers": {
+          "value": "7048-04-6",
+          "unit": null,
+          "source_section": "Page 1",
+          "raw_string": "CAS No. 7048-04-6",
+          "confidence": "high",
+          "is_specification": true,
+          "test_method": null
+        },
+        "chemical_components": [
+          "L-Cysteine Hydrochloride Monohydrate"
+        ],
+        "chemical_synonyms": [
+          "L-Cysteine"
+        ],
+        "purity": {
+          "value": "98.5 - 101.0",
+          "unit": "%",
+          "source_section": "Page 2",
+          "raw_string": "98.5 - 101.0 %",
+          "confidence": "high",
+          "is_specification": true,
+          "test_method": "PH. EUR."
+        }
+      },
+      "physical": {
+        "physical_form": {
+          "value": "crystalline powder or colourless crystals",
+          "unit": null,
+          "source_section": "Page 1",
+          "raw_string": "white or almost white, crystalline powder or colourless crystals",
+          "confidence": "medium",
+          "is_specification": false,
+          "test_method": null
+        },
+        "density": null,
+        "flash_point": null,
+        "temperature_range": {
+          "value": "25-40",
+          "unit": "°C",
+          "source_section": "Page 2",
+          "raw_string": "a temperature of 25°C is recommended for optimal product quality, but 40°C up to 180 days does not affect the quality.",
+          "confidence": "medium",
+          "is_specification": false,
+          "test_method": null
+        },
+        "shelf_life": {
+          "value": "24",
+          "unit": "months",
+          "source_section": "Page 2",
+          "raw_string": "shelf life of at least 24 months",
+          "confidence": "high",
+          "is_specification": false,
+          "test_method": null
+        },
+        "cure_system": null
+      },
+      "application": {
+        "main_application": "Food applications, Dough Softening, Savory Flavors",
+        "usage_restrictions": [],
+        "packaging_options": [
+          "25 kg"
+        ]
+      },
+      "safety": {
+        "ghs_statements": [],
+        "un_number": null,
+        "certifications": [],
+        "global_inventories": [],
+        "blocked_countries": [],
+        "blocked_industries": []
+      },
+      "compliance": {
+        "wiaw_status": null,
+        "sales_advisory": null
+      },
+      "missing_attributes": [
+        "wacker_sku",
+        "material_numbers",
+        "flash_point",
+        "cure_system",
+        "usage_restrictions",
+        "ghs_statements",
+        "un_number",
+        "certifications",
+        "global_inventories",
+        "blocked_countries",
+        "blocked_industries",
+        "wiaw_status",
+        "sales_advisory"
+      ],
+      "extraction_warnings": [
+        "The prompt specified the document type as 'Safety Data Sheet (SDS)', but the provided content is structured like a Technical Data Sheet (TDS) and does not contain the typical sections (e.g., GHS statements, UN number, global inventories) expected in an SDS. Consequently, several SDS-specific attributes could not be extracted.",
+        "The extracted 'temperature_range' refers to storage temperature recommendations, not application temperature range."
+      ]
+    }
+  }
+]

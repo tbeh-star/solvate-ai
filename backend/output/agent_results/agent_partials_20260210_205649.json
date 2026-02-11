@@ -1,0 +1,641 @@
+[
+  {
+    "source_file": "/Users/taobehrendt/Desktop/Claude/02_Input/Wacker/BELSIL\u00ae/BELSIL\u00ae CDM 3526 VP/BELSIL-CDM-3526-VP-TDS-en-2024.06.16.pdf",
+    "doc_type": "TDS",
+    "extracted_count": 33,
+    "missing_count": 22,
+    "missing_fields": [
+      "identity.wacker_sku",
+      "identity.material_numbers",
+      "identity.grade",
+      "chemical.cas_numbers",
+      "chemical.chemical_components",
+      "chemical.purity",
+      "physical.density",
+      "physical.flash_point",
+      "physical.temperature_range",
+      "physical.shelf_life",
+      "physical.cure_system",
+      "physical.odor",
+      "application.usage_restrictions",
+      "application.packaging_options",
+      "safety.ghs_statements",
+      "safety.un_number",
+      "safety.certifications",
+      "safety.global_inventories",
+      "safety.blocked_countries",
+      "safety.blocked_industries",
+      "compliance.wiaw_status",
+      "compliance.sales_advisory"
+    ],
+    "warnings": [],
+    "extraction_result": {
+      "document_info": {
+        "document_type": "TDS",
+        "language": "en",
+        "manufacturer": "Wacker Chemie AG",
+        "brand": "BELSIL",
+        "revision_date": "16.06.2024",
+        "page_count": 2
+      },
+      "identity": {
+        "product_name": "BELSIL\u00ae CDM 3526 VP",
+        "product_line": "BELSIL",
+        "wacker_sku": null,
+        "material_numbers": [],
+        "product_url": "http://www.wacker.com",
+        "grade": null
+      },
+      "chemical": {
+        "cas_numbers": {
+          "value": null,
+          "unit": null,
+          "source_section": "not found",
+          "raw_string": "CAS number not found in document",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        },
+        "chemical_components": [],
+        "chemical_synonyms": [
+          "C26 - 28 Alkyl Dimethicone"
+        ],
+        "purity": null
+      },
+      "physical": {
+        "physical_form": {
+          "value": "pasty",
+          "unit": null,
+          "source_section": "Page 1, Technical data, General Characteristics table",
+          "raw_string": "Appearance\n-\npasty\n-",
+          "confidence": "high",
+          "is_specification": false,
+          "test_method": null
+        },
+        "density": null,
+        "flash_point": null,
+        "temperature_range": null,
+        "shelf_life": null,
+        "cure_system": null
+      },
+      "application": {
+        "main_application": "skin protection, Skin Care, Sunscreens and Decorative Cosmetics",
+        "usage_restrictions": [],
+        "packaging_options": []
+      },
+      "safety": {
+        "ghs_statements": [],
+        "un_number": null,
+        "certifications": [],
+        "global_inventories": [],
+        "blocked_countries": [],
+        "blocked_industries": []
+      },
+      "compliance": {
+        "wiaw_status": null,
+        "sales_advisory": null
+      },
+      "missing_attributes": [
+        "identity.wacker_sku",
+        "identity.material_numbers",
+        "identity.grade",
+        "chemical.cas_numbers",
+        "chemical.chemical_components",
+        "chemical.purity",
+        "physical.density",
+        "physical.flash_point",
+        "physical.temperature_range",
+        "physical.shelf_life",
+        "physical.cure_system",
+        "physical.odor",
+        "application.usage_restrictions",
+        "application.packaging_options",
+        "safety.ghs_statements",
+        "safety.un_number",
+        "safety.certifications",
+        "safety.global_inventories",
+        "safety.blocked_countries",
+        "safety.blocked_industries",
+        "compliance.wiaw_status",
+        "compliance.sales_advisory"
+      ],
+      "extraction_warnings": []
+    }
+  },
+  {
+    "source_file": "/Users/taobehrendt/Desktop/Claude/02_Input/Wacker/BELSIL\u00ae/BELSIL\u00ae CDM 3526 VP/BELSIL\u00ae CDM 3526 VP ALKYL-MODIFIED SILICONE-SDS-en.pdf",
+    "doc_type": "SDS",
+    "extracted_count": 24,
+    "missing_count": 9,
+    "missing_fields": [
+      "product_url",
+      "grade",
+      "temperature_range",
+      "shelf_life",
+      "cure_system",
+      "usage_restrictions",
+      "packaging_options",
+      "wiaw_status",
+      "sales_advisory"
+    ],
+    "warnings": [],
+    "extraction_result": {
+      "document_info": {
+        "document_type": "SDS",
+        "language": "en",
+        "manufacturer": "Wacker Chemie AG",
+        "brand": null,
+        "revision_date": "07.03.2025",
+        "page_count": 10
+      },
+      "identity": {
+        "product_name": "BELSIL\u00ae CDM 3526 VP",
+        "product_line": null,
+        "wacker_sku": "60043252",
+        "material_numbers": [
+          "60043252"
+        ],
+        "product_url": null,
+        "grade": null
+      },
+      "chemical": {
+        "cas_numbers": {
+          "value": "541-02-6, 540-97-6",
+          "unit": null,
+          "source_section": "SDS Section 3.2",
+          "raw_string": "541-02-6\nDecamethylcyclopentasiloxane\n540-97-6\nDodecamethylcyclohexasiloxane",
+          "confidence": "high",
+          "is_specification": true,
+          "test_method": null
+        },
+        "chemical_components": [
+          "{'component': 'Polydimethylsiloxane with aliphatic groups', 'cas_number': None, 'concentration': None, 'unit': None, 'source_section': 'SDS Section 3.1.1', 'raw_string': 'Polydimethylsiloxane with aliphatic groups', 'confidence': 'high', 'is_specification': False}",
+          "{'component': 'Decamethylcyclopentasiloxane', 'cas_number': '541-02-6', 'concentration': '0.5-1', 'unit': '%', 'source_section': 'SDS Section 3.2', 'raw_string': 'Decamethylcyclopentasiloxane\\n>=0.5\u2013 <1', 'confidence': 'high', 'is_specification': False}",
+          "{'component': 'Dodecamethylcyclohexasiloxane', 'cas_number': '540-97-6', 'concentration': '0.5-1', 'unit': '%', 'source_section': 'SDS Section 3.2', 'raw_string': 'Dodecamethylcyclohexasiloxane\\n>=0.5\u2013 <1', 'confidence': 'high', 'is_specification': False}"
+        ],
+        "chemical_synonyms": [
+          "ALKYL-MODIFIED SILICONE"
+        ],
+        "purity": null
+      },
+      "physical": {
+        "physical_form": {
+          "value": "solid, wax-like",
+          "unit": null,
+          "source_section": "SDS Section 9.1",
+          "raw_string": "Physical state ....................................................... : solid\nForm ..................................................................... : wax-like",
+          "confidence": "high",
+          "is_specification": false,
+          "test_method": null
+        },
+        "density": {
+          "value": "0.857",
+          "unit": "g/cm\u00b3",
+          "source_section": "SDS Section 9.1",
+          "raw_string": "Density ................................................................. : 0.857 g/cm\u00b3 (100 \u00b0C; 1013 hPa)",
+          "confidence": "high",
+          "is_specification": false,
+          "test_method": null
+        },
+        "flash_point": {
+          "value": "183",
+          "unit": "\u00b0C",
+          "source_section": "SDS Section 9.1",
+          "raw_string": "Flash point ............................................................ : 183 \u00b0C\n(ASTM D93)",
+          "confidence": "high",
+          "is_specification": false,
+          "test_method": "ASTM D93"
+        },
+        "temperature_range": null,
+        "shelf_life": null,
+        "cure_system": null
+      },
+      "application": {
+        "main_application": "Industrial, cosmetics",
+        "usage_restrictions": [],
+        "packaging_options": []
+      },
+      "safety": {
+        "ghs_statements": [],
+        "un_number": null,
+        "certifications": [],
+        "global_inventories": [
+          "ENCS (Handbook of Existing and New Chemical Substances): This product is listed in, or complies with, the substance inventory.",
+          "AIIC (Australian Inventory of Industrial Chemicals): This product is listed in, or complies with, the substance inventory.",
+          "DSL (Domestic Substance List): This product is listed in, or complies with, the substance inventory.",
+          "PICCS (Philippine Inventory of Chemicals and Chemical Substances): This product is not listed or in compliance with the substance inventory.",
+          "TSCA (Toxic Substance Control Act Chemical Substance Inventory): All components of this product are listed as active or are in compliance with the substance inventory.",
+          "TCSI (Taiwan Chemical Substance Inventory): This product is listed in, or complies with, the substance inventory.",
+          "REACH (Regulation (EC) No 1907/2006): General note: the registration obligations for substances imported into the EEA or manufactured within the EEA by the supplier mentioned in section 1 are fulfilled by the said supplier. The registration obligations for substances imported into the EEA by customers or other downstream users must be fulfilled by the latter."
+        ],
+        "blocked_countries": [],
+        "blocked_industries": []
+      },
+      "compliance": {
+        "wiaw_status": null,
+        "sales_advisory": null
+      },
+      "missing_attributes": [
+        "product_url",
+        "grade",
+        "temperature_range",
+        "shelf_life",
+        "cure_system",
+        "usage_restrictions",
+        "packaging_options",
+        "wiaw_status",
+        "sales_advisory"
+      ],
+      "extraction_warnings": []
+    }
+  },
+  {
+    "source_file": "/Users/taobehrendt/Desktop/Claude/02_Input/Wacker/BELSIL\u00ae/BELSIL\u00ae CDM 3526 VP/BELSIL\u00ae CDM 3526 VP SOLUBILITY AND COMPATIBILITY.pdf",
+    "doc_type": "TDS",
+    "extracted_count": 7,
+    "missing_count": 26,
+    "missing_fields": [
+      "manufacturer",
+      "wacker_sku",
+      "material_numbers",
+      "product_url",
+      "grade",
+      "cas_numbers",
+      "chemical_components",
+      "chemical_synonyms",
+      "purity",
+      "physical_form",
+      "density",
+      "flash_point",
+      "temperature_range",
+      "shelf_life",
+      "cure_system",
+      "main_application",
+      "usage_restrictions",
+      "packaging_options",
+      "ghs_statements",
+      "un_number",
+      "certifications",
+      "global_inventories",
+      "blocked_countries",
+      "blocked_industries",
+      "wiaw_status",
+      "sales_advisory"
+    ],
+    "warnings": [],
+    "extraction_result": {
+      "document_info": {
+        "document_type": "TDS",
+        "language": "en",
+        "manufacturer": null,
+        "brand": "BELSIL",
+        "revision_date": "09.03.2023",
+        "page_count": 1
+      },
+      "identity": {
+        "product_name": "BELSIL\u00ae CDM 3526 VP",
+        "product_line": "BELSIL\u00ae",
+        "wacker_sku": null,
+        "material_numbers": [],
+        "product_url": null,
+        "grade": null
+      },
+      "chemical": {
+        "cas_numbers": {
+          "value": null,
+          "unit": null,
+          "source_section": "not found",
+          "raw_string": "CAS number not found in document",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        },
+        "chemical_components": [],
+        "chemical_synonyms": [],
+        "purity": null
+      },
+      "physical": {
+        "physical_form": null,
+        "density": null,
+        "flash_point": null,
+        "temperature_range": null,
+        "shelf_life": null,
+        "cure_system": null
+      },
+      "application": {
+        "main_application": null,
+        "usage_restrictions": [],
+        "packaging_options": []
+      },
+      "safety": {
+        "ghs_statements": [],
+        "un_number": null,
+        "certifications": [],
+        "global_inventories": [],
+        "blocked_countries": [],
+        "blocked_industries": []
+      },
+      "compliance": {
+        "wiaw_status": null,
+        "sales_advisory": null
+      },
+      "missing_attributes": [
+        "manufacturer",
+        "wacker_sku",
+        "material_numbers",
+        "product_url",
+        "grade",
+        "cas_numbers",
+        "chemical_components",
+        "chemical_synonyms",
+        "purity",
+        "physical_form",
+        "density",
+        "flash_point",
+        "temperature_range",
+        "shelf_life",
+        "cure_system",
+        "main_application",
+        "usage_restrictions",
+        "packaging_options",
+        "ghs_statements",
+        "un_number",
+        "certifications",
+        "global_inventories",
+        "blocked_countries",
+        "blocked_industries",
+        "wiaw_status",
+        "sales_advisory"
+      ],
+      "extraction_warnings": []
+    }
+  },
+  {
+    "source_file": "/Users/taobehrendt/Desktop/Claude/02_Input/Wacker/BELSIL\u00ae/BELSIL\u00ae DM 6101 E/BELSIL DM 6101 E-SDS-en.pdf",
+    "doc_type": "SDS",
+    "extracted_count": 22,
+    "missing_count": 11,
+    "missing_fields": [
+      "product_url",
+      "grade",
+      "purity",
+      "shelf_life",
+      "cure_system",
+      "usage_restrictions",
+      "packaging_options",
+      "wiaw_status",
+      "sales_advisory",
+      "blocked_countries",
+      "blocked_industries"
+    ],
+    "warnings": [],
+    "extraction_result": {
+      "document_info": {
+        "document_type": "SDS",
+        "language": "en",
+        "manufacturer": "Wacker Metroark Chemicals Pvt. Ltd.",
+        "brand": "BELSIL",
+        "revision_date": "07.11.2022",
+        "page_count": 9
+      },
+      "identity": {
+        "product_name": "BELSIL DM 6101 E 0,5KG BOTTLE PE",
+        "product_line": "BELSIL",
+        "wacker_sku": "60101969",
+        "material_numbers": [
+          "60101969"
+        ],
+        "product_url": null,
+        "grade": null
+      },
+      "chemical": {
+        "cas_numbers": {
+          "value": "69011-36-5",
+          "unit": null,
+          "source_section": "SDS Section 3",
+          "raw_string": "69011-36-5",
+          "confidence": "high",
+          "is_specification": true,
+          "test_method": null
+        },
+        "chemical_components": [
+          "Polydimethylsiloxane (emulsion in water)",
+          "Tridecanol ethoxylate, branched with 5-6 EO"
+        ],
+        "chemical_synonyms": [],
+        "purity": null
+      },
+      "physical": {
+        "physical_form": {
+          "value": "liquid",
+          "unit": null,
+          "source_section": "SDS Section 9",
+          "raw_string": "liquid (20 \u00b0C / 1,013 hPa)",
+          "confidence": "high",
+          "is_specification": false,
+          "test_method": null
+        },
+        "density": {
+          "value": 1.0,
+          "unit": "g/cm\u00b3",
+          "source_section": "SDS Section 9",
+          "raw_string": "1 g/cm\u00b3 (20 \u00b0C; 1013 hPa)",
+          "confidence": "high",
+          "is_specification": false,
+          "test_method": "Lit."
+        },
+        "flash_point": {
+          "value": "exempt",
+          "unit": null,
+          "source_section": "SDS Section 9",
+          "raw_string": "exempt",
+          "confidence": "high",
+          "is_specification": false,
+          "test_method": null
+        },
+        "temperature_range": {
+          "value": "5 - 35",
+          "unit": "\u00b0C",
+          "source_section": "SDS Section 7",
+          "raw_string": "Minimum temperature allowed during storage and transportation: 5 \u00b0C\nMaximum temperature allowed during storage and transportation: 35 \u00b0C",
+          "confidence": "high",
+          "is_specification": false,
+          "test_method": null
+        },
+        "shelf_life": null,
+        "cure_system": null
+      },
+      "application": {
+        "main_application": "Industrial, cosmetics",
+        "usage_restrictions": [],
+        "packaging_options": []
+      },
+      "safety": {
+        "ghs_statements": [],
+        "un_number": {
+          "value": null,
+          "unit": null,
+          "source_section": "SDS Section 14",
+          "raw_string": "Not regulated for transport",
+          "confidence": "high",
+          "is_specification": false,
+          "test_method": null
+        },
+        "certifications": [
+          "Not a Scheduled Poison"
+        ],
+        "global_inventories": [
+          "ENCS",
+          "AIIC",
+          "IECSC",
+          "DSL",
+          "PICCS",
+          "TSCA",
+          "TCSI",
+          "REACH",
+          "AREC"
+        ],
+        "blocked_countries": [],
+        "blocked_industries": []
+      },
+      "compliance": {
+        "wiaw_status": null,
+        "sales_advisory": null
+      },
+      "missing_attributes": [
+        "product_url",
+        "grade",
+        "purity",
+        "shelf_life",
+        "cure_system",
+        "usage_restrictions",
+        "packaging_options",
+        "wiaw_status",
+        "sales_advisory",
+        "blocked_countries",
+        "blocked_industries"
+      ],
+      "extraction_warnings": []
+    }
+  },
+  {
+    "source_file": "/Users/taobehrendt/Desktop/Claude/02_Input/Wacker/BELSIL\u00ae/BELSIL\u00ae DM 6101 E/BELSIL-DM-6101-E-TDS-en-2024.06.16.pdf",
+    "doc_type": "TDS",
+    "extracted_count": 33,
+    "missing_count": 12,
+    "missing_fields": [
+      "Density",
+      "Viscosity",
+      "Flash Point",
+      "pH/Acid Number",
+      "Color",
+      "Odor",
+      "Grade",
+      "SKU",
+      "Material Numbers",
+      "Cure System",
+      "Packaging",
+      "Shelf Life"
+    ],
+    "warnings": [],
+    "extraction_result": {
+      "document_info": {
+        "document_type": "TDS",
+        "language": "en",
+        "manufacturer": "Wacker Chemie AG",
+        "brand": "BELSIL",
+        "revision_date": "16.06.2024",
+        "page_count": 2
+      },
+      "identity": {
+        "product_name": "BELSIL\u00ae DM 6101 E",
+        "product_line": "Silicone Fluid Emulsions",
+        "wacker_sku": null,
+        "material_numbers": [],
+        "product_url": "http://www.wacker.com",
+        "grade": null
+      },
+      "chemical": {
+        "cas_numbers": {
+          "value": null,
+          "unit": null,
+          "source_section": "not found",
+          "raw_string": "CAS number not found in document",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        },
+        "chemical_components": [
+          "{'component_name': {'value': 'Dimethicone', 'unit': None, 'source_section': 'Technical data / General Characteristics', 'raw_string': 'Dimethicone', 'confidence': 'high', 'is_specification': False, 'test_method': None}, 'cas_number': None, 'percentage': None}",
+          "{'component_name': {'value': 'Trideceth-5', 'unit': None, 'source_section': 'Technical data / General Characteristics', 'raw_string': 'Trideceth-5', 'confidence': 'high', 'is_specification': False, 'test_method': None}, 'cas_number': None, 'percentage': None}"
+        ],
+        "chemical_synonyms": [],
+        "purity": {
+          "value": "60",
+          "unit": "%",
+          "source_section": "Technical data / General Characteristics",
+          "raw_string": "approx. 60 %",
+          "confidence": "high",
+          "is_specification": false,
+          "test_method": null
+        }
+      },
+      "physical": {
+        "physical_form": {
+          "value": "liquid",
+          "unit": null,
+          "source_section": "Technical data / General Characteristics",
+          "raw_string": "milky-white liquid",
+          "confidence": "high",
+          "is_specification": false,
+          "test_method": null
+        },
+        "density": null,
+        "flash_point": null,
+        "temperature_range": {
+          "value": "5",
+          "unit": "\u00b0C",
+          "source_section": "Packaging and storage / Storage",
+          "raw_string": "Minimum temperature allowed during storage and transportation: 5 \u00b0C",
+          "confidence": "medium",
+          "is_specification": false,
+          "test_method": null
+        },
+        "shelf_life": null,
+        "cure_system": null
+      },
+      "application": {
+        "main_application": "Conditioners, Shampoos, Hair treatments, Hair masks",
+        "usage_restrictions": [],
+        "packaging_options": []
+      },
+      "safety": {
+        "ghs_statements": [],
+        "un_number": null,
+        "certifications": [],
+        "global_inventories": [],
+        "blocked_countries": [],
+        "blocked_industries": []
+      },
+      "compliance": {
+        "wiaw_status": null,
+        "sales_advisory": null
+      },
+      "missing_attributes": [
+        "Density",
+        "Viscosity",
+        "Flash Point",
+        "pH/Acid Number",
+        "Color",
+        "Odor",
+        "Grade",
+        "SKU",
+        "Material Numbers",
+        "Cure System",
+        "Packaging",
+        "Shelf Life"
+      ],
+      "extraction_warnings": []
+    }
+  }
+]

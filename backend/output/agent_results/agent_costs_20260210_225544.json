@@ -1,0 +1,32 @@
+{
+  "pipeline_summary": {
+    "total_pdfs": 131,
+    "successful_extractions": 130,
+    "failed_extractions": 1,
+    "product_groups": 54,
+    "golden_records": 54,
+    "elapsed_seconds": 3606.7
+  },
+  "cost_summary": {
+    "total_extractions": 262,
+    "cascade_triggered_count": 0,
+    "total_tokens": 1767985,
+    "total_cost_usd": 0.409,
+    "avg_cost_per_pdf": 0.0016,
+    "elapsed_seconds": 3606.7,
+    "providers": {
+      "google/gemini-2.5-flash": {
+        "calls": 262,
+        "input_tokens": 1448522,
+        "output_tokens": 319463,
+        "cache_creation_tokens": 0,
+        "cache_read_tokens": 0,
+        "total_tokens": 1767985,
+        "cost_usd": 0.409,
+        "avg_cost_per_call": 0.0016,
+        "avg_duration_ms": 12970,
+        "cache_hit_rate_pct": 0.0
+      }
+    }
+  }
+}

@@ -1,0 +1,178 @@
+================================================================================
+  REGRESSION REPORT: Monolith vs Agent Pipeline
+================================================================================
+
+  Files in Monolith:  130
+  Files in Agent:     130
+  Common (compared):  130
+
+================================================================================
+  FIELD POPULATION COMPARISON (populated count across 130 PDFs)
+================================================================================
+  Field                            Monolith      Agent     Diff     Status
+  ----------------------------------------------------------------------
+  product_name                          123        129       +6       +6 ✅
+  product_line                          123         70      -53     -53 ⚠️
+  wacker_sku                             54         33      -21     -21 ⚠️
+  material_numbers                       54         45       -9      -9 ⚠️
+  product_url                            65         54      -11     -11 ⚠️
+  grade                                  50         22      -28     -28 ⚠️
+  cas_numbers                            26         44      +18      +18 ✅
+  chemical_components                    99         74      -25     -25 ⚠️
+  chemical_synonyms                      18         11       -7      -7 ⚠️
+  purity                                 21         28       +7       +7 ✅
+  physical_form                         111        112       +1       +1 ✅
+  density                                91         98       +7       +7 ✅
+  flash_point                            61         64       +3       +3 ✅
+  temperature_range                      29         31       +2       +2 ✅
+  shelf_life                             29         18      -11     -11 ⚠️
+  cure_system                            44         29      -15     -15 ⚠️
+  main_application                      116         74      -42     -42 ⚠️
+  usage_restrictions                    101         27      -74     -74 ⚠️
+  packaging_options                      31         31       +0          =
+  ghs_statements                         23         26       +3       +3 ✅
+  un_number                              15          9       -6      -6 ⚠️
+  certifications                         28         26       -2      -2 ⚠️
+  global_inventories                     55         61       +6       +6 ✅
+  blocked_countries                       6          0       -6      -6 ⚠️
+  blocked_industries                      7          0       -7      -7 ⚠️
+  wiaw_status                             0          0       +0          =
+  sales_advisory                          5          1       -4      -4 ⚠️
+  document_type                         123        129       +6       +6 ✅
+  language                              123        129       +6       +6 ✅
+  manufacturer                          123        128       +5       +5 ✅
+  brand                                 123        101      -22     -22 ⚠️
+  revision_date                         123        129       +6       +6 ✅
+  ----------------------------------------------------------------------
+  TOTAL                                2000       1733     -267 ⚠️
+
+================================================================================
+  ⚠️  REGRESSIONS (17 fields with fewer populated values)
+================================================================================
+  usage_restrictions: 101 → 27 (-74)
+  product_line: 123 → 70 (-53)
+  main_application: 116 → 74 (-42)
+  grade: 50 → 22 (-28)
+  chemical_components: 99 → 74 (-25)
+  brand: 123 → 101 (-22)
+  wacker_sku: 54 → 33 (-21)
+  cure_system: 44 → 29 (-15)
+  product_url: 65 → 54 (-11)
+  shelf_life: 29 → 18 (-11)
+  material_numbers: 54 → 45 (-9)
+  chemical_synonyms: 18 → 11 (-7)
+  blocked_industries: 7 → 0 (-7)
+  un_number: 15 → 9 (-6)
+  blocked_countries: 6 → 0 (-6)
+  sales_advisory: 5 → 1 (-4)
+  certifications: 28 → 26 (-2)
+
+================================================================================
+  ✅ IMPROVEMENTS (13 fields with more populated values)
+================================================================================
+  cas_numbers: 26 → 44 (+18)
+  purity: 21 → 28 (+7)
+  density: 91 → 98 (+7)
+  product_name: 123 → 129 (+6)
+  global_inventories: 55 → 61 (+6)
+  document_type: 123 → 129 (+6)
+  language: 123 → 129 (+6)
+  revision_date: 123 → 129 (+6)
+  manufacturer: 123 → 128 (+5)
+  flash_point: 61 → 64 (+3)
+  ghs_statements: 23 → 26 (+3)
+  temperature_range: 29 → 31 (+2)
+  physical_form: 111 → 112 (+1)
+
+================================================================================
+  PER-PDF MISSING COUNT COMPARISON
+================================================================================
+  Average missing per PDF:  Monolith=13.9  Agent=15.4  Diff=+1.5
+  Total missing:            Monolith=1809  Agent=2000
+
+  Top improvements (fewer missing in Agent):
+    VINNAPAS-AF-875-TDS-en-2024.07.31.pdf                         26 →   6 (-20)
+    GENIOSIL-XL-10-TDS-en-2024.06.16.pdf                          15 →   6 (-9)
+    ELASTOSIL-LR-367530-AB-TDS-en-2024.06.16.pdf                  19 →  11 (-8)
+    WACKER SILANES FOR COATINGS APPLICATIONS.pdf                  21 →  13 (-8)
+    ELASTOSIL-E4-TDS-en-2026.01.23.pdf                            18 →  11 (-7)
+    FERMOPURE-VEGAN-L-CYSTEIN-FOOD-20-Low-Perchlorate-TDS-en-2025.10.15.pdf  13 →   6 (-7)
+    FERMOPURE-Vegan-L-Cysteine-FOOD-20-TDS-en-2024.06.16.pdf      14 →   7 (-7)
+    VINNAPAS-5044-N-ULS-TDS-en-2024.06.16.pdf                     16 →   9 (-7)
+    VINNAPAS-5047-T-TDS-en-2024.06.16.pdf                         16 →   9 (-7)
+    VINNAPAS-5129-L-TDS-en-2025.05.26.pdf                         17 →  10 (-7)
+
+  Top regressions (more missing in Agent):
+    POWERSIL-735-LIGHTGRAY-AB-TDS-en-2022.06.28.pdf                0 →  21 (+21)
+    POWERSIL-PASTE-AP-TDS-en-2025.01.28.pdf                       18 →  36 (+18)
+    LIFE SCIENCE CHEMICALS FOR PHARMA, AGRO AND INDUSTRIAL APPLICATIONS.pdf   0 →  16 (+16)
+    POWERSIL 600 B-SDS-en.pdf                                      0 →  15 (+15)
+    GENIOSIL® XT 50-SDS-en.pdf                                     0 →  13 (+13)
+    Elastosil-5100-SDS-en.pdf                                      0 →  13 (+13)
+    Elastosil-5605-SDS-en.pdf                                      0 →   9 (+9)
+    ELASTOSIL-4710-TDS-en-2024.07.31.pdf                          13 →  22 (+9)
+    GENIOSIL-XT-120-TDS-en-2024.07.12.pdf                         17 →  25 (+8)
+    GENIOSIL-WP-1-TDS-en-2025.03.12.pdf                           14 →  22 (+8)
+
+================================================================================
+  DOC-TYPE CLASSIFICATION COMPARISON
+================================================================================
+  Classification changes: 54 / 130
+    BELSIL-CDM-3526-VP-TDS-en-2024.06.16.pdf                            SDS → TDS
+    BELSIL® CDM 3526 VP SOLUBILITY AND COMPATIBILITY.pdf           Brochure → TDS
+    ELASTOSIL-4100-TDS-en-2025.07.22.pdf                           Brochure → TDS
+    ELASTOSIL-4300-TDS-en-2024.07.31.pdf                           Brochure → TDS
+    ELASTOSIL-4710-TDS-en-2024.07.31.pdf                           Brochure → TDS
+    ELASTOSIL-5000-TDS-en-2024.07.31.pdf                           Brochure → TDS
+    ELASTOSIL-5002-TDS-en-2024.07.31.pdf                           Brochure → TDS
+    ELASTOSIL-5100-TDS-en-2025.12.17.pdf                           Brochure → TDS
+    ELASTOSIL-5605-TDS-en-2024.06.16.pdf                           Brochure → TDS
+    ELASTOSIL-6000-TDS-en-2024.07.31.pdf                           Brochure → TDS
+    ELASTOSIL-6100-TDS-en-2024.06.16.pdf                           Brochure → TDS
+    ELASTOSIL-E4-TDS-en-2026.01.23.pdf                             Brochure → TDS
+    ELASTOSIL-LR-304040-AB-TDS-en-2024.06.16.pdf                   Brochure → TDS
+    ELASTOSIL-LR-306530-AB-TDS-en-2024.06.16.pdf                   Brochure → TDS
+    ELASTOSIL-LR-306550-AB-TDS-en-2024.06.16.pdf                   Brochure → TDS
+    ELASTOSIL-LR-306640-AB-TDS-en-2024.06.16.pdf                   Brochure → TDS
+    ELASTOSIL-LR-367530-AB-TDS-en-2024.06.16.pdf                   Brochure → TDS
+    Elastosil-5100-SDS-en.pdf                                             ? → SDS
+    Elastosil-5605-SDS-en.pdf                                             ? → SDS
+    FERMOPURE-L-Cysteine-PHARMA-TDS-en-2025.04.10.pdf              Brochure → TDS
+    FERMOPURE-Natural-L-Cystine-FOOD-TDS-en-2024.06.16.pdf         Brochure → TDS
+    FERMOPURE-VEGAN-L-CYSTEIN-FOOD-20-Low-Perchlorate-TDS-en-2025.10.15.pdf        SDS → TDS
+    FERMOPURE-Vegan-L-Cysteine-FOOD-20-TDS-en-2024.06.16.pdf       Brochure → TDS
+    FERMOPURE-Vegan-L-Cysteine-INFANT-FOOD-TDS-en-2025.11.06.pdf   Brochure → TDS
+    GENIOSIL-CS-2-TDS-de-2025.05.27.pdf                            Brochure → TDS
+    GENIOSIL-GF-56-TDS-en-2024.06.16.pdf                                SDS → TDS
+    GENIOSIL-GF-9-TDS-en-2024.06.16.pdf                            Brochure → TDS
+    GENIOSIL-STABILIZER-T-TDS-en-2025.04.23.pdf                         SDS → TDS
+    GENIOSIL-WP-1-TDS-en-2025.03.12.pdf                            Brochure → TDS
+    GENIOSIL-XL-10-TDS-en-2024.06.16.pdf                                SDS → TDS
+    GENIOSIL-XT-120-TDS-en-2024.07.12.pdf                          Brochure → TDS
+    GENIOSIL-XT-50-TDS-en-2024.07.12.pdf                           Brochure → TDS
+    GENIOSIL® XT 50-SDS-en.pdf                                            ? → SDS
+    LIFE SCIENCE CHEMICALS FOR PHARMA, AGRO AND INDUSTRIAL APPLICATIONS.pdf          ? → Brochure
+    POWERSIL 600 B-SDS-en.pdf                                             ? → SDS
+    POWERSIL-190-MH-TDS-en-2024.07.31.pdf                          Brochure → TDS
+    POWERSIL-310-MH-TDS-en-2024.06.16.pdf                          Brochure → TDS
+    POWERSIL-352-MH-TDS-en-2024.06.16.pdf                          Brochure → TDS
+    POWERSIL-600-AB-TDS-en-2024.06.16.pdf                          Brochure → TDS
+    POWERSIL-735-LIGHTGRAY-AB-TDS-en-2022.06.28.pdf                       ? → TDS
+    POWERSIL-79032-TDS-en-2024.06.16.pdf                           Brochure → TDS
+    POWERSIL-FLUID-TR-50-TDS-en-2024.06.16.pdf                     Brochure → TDS
+    POWERSIL-INSULATOR-FINISH-TDS-en-2024.06.16.pdf                Brochure → TDS
+    POWERSIL-PASTE-AP-TDS-en-2025.01.28.pdf                             SDS → TDS
+    VINNAPAS-2012-E-TDS-en-2024.06.16.pdf                          Brochure → TDS
+    VINNAPAS-5010-N-KOR-TDS-en-2024.06.16.pdf                      Brochure → TDS
+    VINNAPAS-5044-N-ULS-TDS-en-2024.06.16.pdf                      Brochure → TDS
+    VINNAPAS-5047-T-TDS-en-2024.06.16.pdf                          Brochure → TDS
+    VINNAPAS-5129-L-TDS-en-2025.05.26.pdf                          Brochure → TDS
+    VINNAPAS-530-ND-TDS-en-2024.08.07.pdf                          Brochure → TDS
+    VINNAPAS-550-ED-TDS-en-2024.06.16.pdf                          Brochure → TDS
+    VINNAPAS-8812-T-TDS-en-2024.06.16.pdf                          Brochure → TDS
+    VINNAPAS-eco-8251-XX-MB-TDS-en-2024.08.07.pdf                       SDS → TDS
+    VINNAPAS-eco-EN-1024-XX-MB-TDS-en-2024.08.07.pdf               Brochure → TDS
+
+================================================================================
+  END OF REPORT
+================================================================================

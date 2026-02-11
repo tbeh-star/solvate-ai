@@ -1,0 +1,357 @@
+[
+  {
+    "file_name": "BELSIL-CDM-3526-VP-TDS-en-2024.06.16.pdf",
+    "file_path": "/Users/taobehrendt/Desktop/Claude/02_Input/Wacker/BELSIL®/BELSIL® CDM 3526 VP/BELSIL-CDM-3526-VP-TDS-en-2024.06.16.pdf",
+    "brand": "BELSIL",
+    "product_folder": "BELSIL® CDM 3526 VP",
+    "doc_type": "SDS",
+    "success": true,
+    "error": null,
+    "provider": "google",
+    "model": "gemini-2.5-flash",
+    "duration_ms": 16345,
+    "input_tokens": 2206,
+    "output_tokens": 1265,
+    "cache_read_tokens": 0,
+    "extraction": {
+      "document_info": {
+        "document_type": "SDS",
+        "language": "en",
+        "manufacturer": "Wacker Chemie AG",
+        "brand": "BELSIL",
+        "revision_date": "16.06.2024",
+        "page_count": 2
+      },
+      "identity": {
+        "product_name": "BELSIL® CDM 3526 VP",
+        "product_line": "BELSIL",
+        "wacker_sku": null,
+        "material_numbers": [],
+        "product_url": "http://www.wacker.com",
+        "grade": {
+          "value": "Cosmetic",
+          "unit": null,
+          "source_section": "Page 1, Technical data; Page 2, Application details",
+          "raw_string": "INCI C26 - 28 Alkyl Dimethicone; The main applications of this silicone wax is in skin protection, Skin Care, Sunscreens and Decorative Cosmetics.",
+          "confidence": "high",
+          "is_specification": false,
+          "test_method": null
+        }
+      },
+      "chemical": {
+        "cas_numbers": {
+          "value": null,
+          "unit": null,
+          "source_section": "not found",
+          "raw_string": "CAS number not found in document",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        },
+        "chemical_components": [],
+        "chemical_synonyms": [
+          "C26 - 28 Alkyl Dimethicone"
+        ],
+        "purity": null
+      },
+      "physical": {
+        "physical_form": {
+          "value": "pasty",
+          "unit": null,
+          "source_section": "Page 1, Technical data table",
+          "raw_string": "Appearance pasty",
+          "confidence": "high",
+          "is_specification": false,
+          "test_method": null
+        },
+        "density": null,
+        "flash_point": null,
+        "temperature_range": null,
+        "shelf_life": null,
+        "cure_system": null
+      },
+      "application": {
+        "main_application": "Skin protection, Skin Care, Sunscreens and Decorative Cosmetics",
+        "usage_restrictions": [],
+        "packaging_options": []
+      },
+      "safety": {
+        "ghs_statements": [],
+        "un_number": null,
+        "certifications": [],
+        "global_inventories": [],
+        "blocked_countries": [],
+        "blocked_industries": []
+      },
+      "compliance": {
+        "wiaw_status": null,
+        "sales_advisory": null
+      },
+      "missing_attributes": [
+        "wacker_sku",
+        "material_numbers",
+        "cas_numbers",
+        "purity",
+        "density",
+        "flash_point",
+        "temperature_range",
+        "shelf_life",
+        "cure_system",
+        "usage_restrictions",
+        "packaging_options",
+        "ghs_statements",
+        "un_number",
+        "certifications",
+        "global_inventories",
+        "blocked_countries",
+        "blocked_industries",
+        "wiaw_status",
+        "sales_advisory"
+      ],
+      "extraction_warnings": [
+        "The document was identified as an SDS by the prompt, but its content and structure resemble a Technical Data Sheet (TDS) or Product Information Sheet, lacking standard SDS sections (e.g., GHS, CAS, UN, Inventories). This has resulted in many SDS-specific fields being null.",
+        "Values from the 'Technical data' table (Appearance, Color, INCI name, Melting point) are explicitly stated as 'only intended as a guide and should not be used in preparing specifications', therefore 'is_specification' is set to false for these values."
+      ]
+    }
+  },
+  {
+    "file_name": "BELSIL® CDM 3526 VP ALKYL-MODIFIED SILICONE-SDS-en.pdf",
+    "file_path": "/Users/taobehrendt/Desktop/Claude/02_Input/Wacker/BELSIL®/BELSIL® CDM 3526 VP/BELSIL® CDM 3526 VP ALKYL-MODIFIED SILICONE-SDS-en.pdf",
+    "brand": "BELSIL",
+    "product_folder": "BELSIL® CDM 3526 VP",
+    "doc_type": "SDS",
+    "success": true,
+    "error": null,
+    "provider": "google",
+    "model": "gemini-2.5-flash",
+    "duration_ms": 34376,
+    "input_tokens": 9355,
+    "output_tokens": 3265,
+    "cache_read_tokens": 9125,
+    "extraction": {
+      "document_info": {
+        "document_type": "SDS",
+        "language": "en",
+        "manufacturer": "Wacker Chemie AG",
+        "brand": "BELSIL",
+        "revision_date": "07.03.2025",
+        "page_count": 10
+      },
+      "identity": {
+        "product_name": "BELSIL® CDM 3526 VP",
+        "product_line": "ALKYL-MODIFIED SILICONE",
+        "wacker_sku": "60043252",
+        "material_numbers": [
+          "60043252"
+        ],
+        "product_url": null,
+        "grade": {
+          "value": "Cosmetic",
+          "unit": null,
+          "source_section": "SECTION 1: Identification",
+          "raw_string": "cosmetics",
+          "confidence": "medium",
+          "is_specification": false,
+          "test_method": null
+        }
+      },
+      "chemical": {
+        "cas_numbers": {
+          "value": null,
+          "unit": null,
+          "source_section": "not found",
+          "raw_string": "CAS number not found in document",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        },
+        "chemical_components": [
+          "Polydimethylsiloxane with aliphatic groups",
+          "Decamethylcyclopentasiloxane",
+          "Dodecamethylcyclohexasiloxane"
+        ],
+        "chemical_synonyms": [],
+        "purity": null
+      },
+      "physical": {
+        "physical_form": {
+          "value": "solid, wax-like",
+          "unit": null,
+          "source_section": "SECTION 9: Physical and chemical properties",
+          "raw_string": "Physical state ....................................................... : solid\nForm ..................................................................... : wax-like",
+          "confidence": "high",
+          "is_specification": false,
+          "test_method": null
+        },
+        "density": {
+          "value": 0.857,
+          "unit": "g/cm³",
+          "source_section": "SECTION 9: Physical and chemical properties",
+          "raw_string": "Density ................................................................. : 0.857 g/cm³ (100 °C; 1013 hPa)",
+          "confidence": "high",
+          "is_specification": false,
+          "test_method": null
+        },
+        "flash_point": {
+          "value": 183.0,
+          "unit": "°C",
+          "source_section": "SECTION 9: Physical and chemical properties",
+          "raw_string": "Flash point ............................................................ : 183 °C (ASTM D93)",
+          "confidence": "high",
+          "is_specification": false,
+          "test_method": "ASTM D93"
+        },
+        "temperature_range": null,
+        "shelf_life": null,
+        "cure_system": null
+      },
+      "application": {
+        "main_application": "cosmetics",
+        "usage_restrictions": [
+          "WACKER restricts the use of its products inside the human body or in contact with bodily fluids and mucosa."
+        ],
+        "packaging_options": []
+      },
+      "safety": {
+        "ghs_statements": [],
+        "un_number": null,
+        "certifications": [
+          "Not a Scheduled Poison"
+        ],
+        "global_inventories": [
+          "ENCS (Handbook of Existing and New Chemical Substances): This product is listed in, or complies with, the substance inventory.",
+          "AIIC (Australian Inventory of Industrial Chemicals): This product is listed in, or complies with, the substance inventory.",
+          "DSL (Domestic Substance List): This product is listed in, or complies with, the substance inventory.",
+          "PICCS (Philippine Inventory of Chemicals and Chemical Substances): This product is not listed or in compliance with the substance inventory.",
+          "TSCA (Toxic Substance Control Act Chemical Substance Inventory): All components of this product are listed as active or are in compliance with the substance inventory.",
+          "TCSI (Taiwan Chemical Substance Inventory): This product is listed in, or complies with, the substance inventory.",
+          "REACH (Regulation (EC) No 1907/2006): General note: the registration obligations for substances imported into the EEA or manufactured within the EEA by the supplier mentioned in section 1 are fulfilled by the said supplier. The registration obligations for substances imported into the EEA by customers or other downstream users must be fulfilled by the latter.",
+          "AREC (Act on Registration and Evaluation of Chemicals; “K-REACH”): Please approach your regular contact for more detailed information."
+        ],
+        "blocked_countries": [
+          "Philippines"
+        ],
+        "blocked_industries": [
+          "Medical/Pharmaceutical (inside human body or in contact with bodily fluids and mucosa)"
+        ]
+      },
+      "compliance": {
+        "wiaw_status": null,
+        "sales_advisory": null
+      },
+      "missing_attributes": [
+        "product_url",
+        "chemical_synonyms",
+        "purity",
+        "temperature_range",
+        "shelf_life",
+        "cure_system",
+        "packaging_options",
+        "wiaw_status",
+        "sales_advisory"
+      ],
+      "extraction_warnings": [
+        "{'attribute': 'grade', 'warning': \"Grade 'Cosmetic' is inferred from 'Use of substance / preparation: cosmetics' in Section 1.2, which is an application, not a formal grade classification in this document.\"}"
+      ]
+    }
+  },
+  {
+    "file_name": "BELSIL® CDM 3526 VP SOLUBILITY AND COMPATIBILITY.pdf",
+    "file_path": "/Users/taobehrendt/Desktop/Claude/02_Input/Wacker/BELSIL®/BELSIL® CDM 3526 VP/BELSIL® CDM 3526 VP SOLUBILITY AND COMPATIBILITY.pdf",
+    "brand": "BELSIL",
+    "product_folder": "BELSIL® CDM 3526 VP",
+    "doc_type": "Brochure",
+    "success": true,
+    "error": null,
+    "provider": "google",
+    "model": "gemini-2.5-flash",
+    "duration_ms": 7556,
+    "input_tokens": 2668,
+    "output_tokens": 830,
+    "cache_read_tokens": 0,
+    "extraction": {
+      "document_info": {
+        "document_type": "Brochure",
+        "language": "en",
+        "manufacturer": "Wacker",
+        "brand": "BELSIL",
+        "revision_date": "09.03.2023",
+        "page_count": 1
+      },
+      "identity": {
+        "product_name": "BELSIL® CDM 3526 VP",
+        "product_line": "BELSIL® Alkyl/Alkoxy-Modified Silicones",
+        "wacker_sku": null,
+        "material_numbers": [],
+        "product_url": null,
+        "grade": null
+      },
+      "chemical": {
+        "cas_numbers": {
+          "value": null,
+          "unit": null,
+          "source_section": "not found",
+          "raw_string": "CAS number not found in document",
+          "confidence": "low",
+          "is_specification": false,
+          "test_method": null
+        },
+        "chemical_components": [],
+        "chemical_synonyms": [],
+        "purity": null
+      },
+      "physical": {
+        "physical_form": null,
+        "density": null,
+        "flash_point": null,
+        "temperature_range": null,
+        "shelf_life": null,
+        "cure_system": null
+      },
+      "application": {
+        "main_application": "Personal care formulations (solubility and compatibility with various solvents, waxes, oils, and other silicones)",
+        "usage_restrictions": [],
+        "packaging_options": []
+      },
+      "safety": {
+        "ghs_statements": [],
+        "un_number": null,
+        "certifications": [],
+        "global_inventories": [],
+        "blocked_countries": [],
+        "blocked_industries": []
+      },
+      "compliance": {
+        "wiaw_status": null,
+        "sales_advisory": null
+      },
+      "missing_attributes": [
+        "wacker_sku",
+        "material_numbers",
+        "product_url",
+        "grade",
+        "cas_numbers",
+        "chemical_components",
+        "chemical_synonyms",
+        "purity",
+        "physical_form",
+        "density",
+        "flash_point",
+        "temperature_range",
+        "shelf_life",
+        "cure_system",
+        "usage_restrictions",
+        "packaging_options",
+        "ghs_statements",
+        "un_number",
+        "certifications",
+        "global_inventories",
+        "blocked_countries",
+        "blocked_industries",
+        "wiaw_status",
+        "sales_advisory"
+      ],
+      "extraction_warnings": []
+    }
+  }
+]

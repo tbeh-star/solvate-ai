@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0a0a08;
+  --foreground: #e8e0d4;
+  --accent: #c4b89a;
+  --muted: #8a8070;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --color-muted: var(--muted);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+/* ── Coming Soon page styles ──────────────────────────────────── */
+
+.bg-gradient-dark {
+  background: linear-gradient(
+    180deg,
+    #000000 0%,
+    #0a0a08 20%,
+    #1a1810 50%,
+    #2a2518 70%,
+    #1a1810 85%,
+    #0a0a08 100%
+  );
+}
+
+.text-glow {
+  text-shadow: 0 0 80px rgba(196, 184, 154, 0.15);
+}
+
+.btn-glass {
+  background: rgba(196, 184, 154, 0.08);
+  border: 1px solid rgba(196, 184, 154, 0.25);
+  backdrop-filter: blur(12px);
+  transition: all 0.3s ease;
+}
+.btn-glass:hover {
+  background: rgba(196, 184, 154, 0.15);
+  border-color: rgba(196, 184, 154, 0.4);
+  transform: translateY(-1px);
+}
+
+.trust-badge {
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+.trust-badge:hover {
+  opacity: 1;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+.animate-fade-in-delay-1 {
+  animation: fadeInUp 0.8s ease-out 0.2s forwards;
+  opacity: 0;
+}
+.animate-fade-in-delay-2 {
+  animation: fadeInUp 0.8s ease-out 0.4s forwards;
+  opacity: 0;
+}
+.animate-fade-in-delay-3 {
+  animation: fadeInUp 0.8s ease-out 0.6s forwards;
+  opacity: 0;
+}
+.animate-fade-in-delay-4 {
+  animation: fadeInUp 0.8s ease-out 0.8s forwards;
+  opacity: 0;
+}
+
+/* ── Dashboard override ───────────────────────────────────────── */
+
+.dashboard-shell {
+  background: #fafafa;
+  color: #111827;
+}

@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+dist/
+build/
+
+# Node
+node_modules/
+.next/
+out/
+
+# Environment
+.env
+.env.local
+.env.production
+
+# Credentials / Secrets
+credentials/
+*.json.key
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Docker
+pgdata/
+
+# Alembic
+migrations/versions/*.pyc
+
+# Coverage
+htmlcov/
+.coverage
+coverage.xml

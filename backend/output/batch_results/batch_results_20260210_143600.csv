@@ -1,0 +1,100 @@
+file_name,brand,product_folder,doc_type,success,product_name,cas_numbers,missing_count,provider,model,input_tokens,output_tokens,cache_read_tokens,duration_ms,error,warnings
+BELSIL-CDM-3526-VP-TDS-en-2024.06.16.pdf,BELSIL,BELSIL® CDM 3526 VP,SDS,False,,,0,google,gemini-2.5-flash,0,0,0,15685,"6 validation errors for ExtractionResult
+identity.product_name
+  Input should be a valid string [type=string_type, input_value={'value': 'BELSIL® CDM 3...se, 'test_method': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+identity.product_line
+  Input should be a valid string [type=string_type, input_value={'value': 'BELSIL', 'unit...se, 'test_method': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+identity.product_url
+  Input should be a valid string [type=string_type, input_value={'value': 'http://www.wac...se, 'test_method': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+chemical.cas_numbers
+  Input should be a valid dictionary or instance of MendelFact [type=model_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+chemical.chemical_synonyms.0
+  Input should be a valid string [type=string_type, input_value={'value': 'C26 - 28 Alkyl...se, 'test_method': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+application.main_application
+  Input should be a valid string [type=string_type, input_value={'value': 'Skin protectio...se, 'test_method': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type",
+BELSIL® CDM 3526 VP ALKYL-MODIFIED SILICONE-SDS-en.pdf,BELSIL,BELSIL® CDM 3526 VP,SDS,False,,,0,google,gemini-2.5-flash,0,0,0,35404,"22 validation errors for ExtractionResult
+identity.product_name
+  Input should be a valid string [type=string_type, input_value={'value': 'BELSIL® CDM 3...se, 'test_method': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+identity.product_line
+  Input should be a valid string [type=string_type, input_value={'value': 'ALKYL-MODIFIED...se, 'test_method': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+identity.wacker_sku
+  Input should be a valid string [type=string_type, input_value={'value': '60043252', 'un...se, 'test_method': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+identity.material_numbers.0
+  Input should be a valid string [type=string_type, input_value={'value': '60043252', 'un...se, 'test_method': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+chemical.cas_numbers
+  Input should be a valid dictionary or instance of MendelFact [type=model_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+chemical.chemical_components.0
+  Input should be a valid string [type=string_type, input_value={'value': 'Polydimethylsi..., 'concentration': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+chemical.chemical_components.1
+  Input should be a valid string [type=string_type, input_value={'value': 'Decamethylcycl...tration': '>=0.5– <1'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+chemical.chemical_components.2
+  Input should be a valid string [type=string_type, input_value={'value': 'Dodecamethylcy...tration': '>=0.5– <1'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+application.main_application
+  Input should be a valid string [type=string_type, input_value={'value': 'cosmetics', 'u...se, 'test_method': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+application.usage_restrictions.0
+  Input should be a valid string [type=string_type, input_value={'value': 'WACKER restric...se, 'test_method': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+safety.certifications.0
+  Input should be a valid string [type=string_type, input_value={'value': 'Not a Schedule...se, 'test_method': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+safety.global_inventories.0
+  Input should be a valid string [type=string_type, input_value={'value': 'ENCS (Handbook...se, 'test_method': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+safety.global_inventories.1
+  Input should be a valid string [type=string_type, input_value={'value': 'AIIC (Australi...se, 'test_method': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+safety.global_inventories.2
+  Input should be a valid string [type=string_type, input_value={'value': 'DSL (Domestic ...se, 'test_method': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+safety.global_inventories.3
+  Input should be a valid string [type=string_type, input_value={'value': 'PICCS (Philipp...se, 'test_method': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+safety.global_inventories.4
+  Input should be a valid string [type=string_type, input_value={'value': 'TSCA (Toxic Su...se, 'test_method': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+safety.global_inventories.5
+  Input should be a valid string [type=string_type, input_value={'value': 'TCSI (Taiwan C...se, 'test_method': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+safety.global_inventories.6
+  Input should be a valid string [type=string_type, input_value={'value': 'REACH (Regulat...se, 'test_method': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+safety.global_inventories.7
+  Input should be a valid string [type=string_type, input_value={'value': 'AREC (Act on R...se, 'test_method': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+safety.blocked_countries.0
+  Input should be a valid string [type=string_type, input_value={'value': 'Philippines', ...se, 'test_method': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+safety.blocked_industries.0
+  Input should be a valid string [type=string_type, input_value={'value': 'Medical/Pharma...se, 'test_method': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+extraction_warnings.0
+  Input should be a valid string [type=string_type, input_value={'attribute': 'grade', 'w...tion in this document.""}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type",
+BELSIL® CDM 3526 VP SOLUBILITY AND COMPATIBILITY.pdf,BELSIL,BELSIL® CDM 3526 VP,Brochure,False,,,0,google,gemini-2.5-flash,0,0,0,12645,"4 validation errors for ExtractionResult
+identity.product_name
+  Input should be a valid string [type=string_type, input_value={'value': 'BELSIL® CDM 3...se, 'test_method': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+identity.product_line
+  Input should be a valid string [type=string_type, input_value={'value': 'BELSIL', 'unit...se, 'test_method': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+chemical.cas_numbers
+  Input should be a valid dictionary or instance of MendelFact [type=model_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+application.main_application
+  Input should be a valid string [type=string_type, input_value={'value': 'Personal care'...se, 'test_method': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type",
