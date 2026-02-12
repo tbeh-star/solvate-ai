@@ -8,9 +8,13 @@ async function apiFetch<T>(path: string, options: FetchOptions = {}): Promise<T>
   const { token, ...fetchOptions } = options;
 
   const headers: Record<string, string> = {
-    "Content-Type": "application/json",
     ...(options.headers as Record<string, string>),
   };
+
+  // Don't set Content-Type for FormData — browser adds multipart boundary automatically
+  if (!(fetchOptions.body instanceof FormData)) {
+    headers["Content-Type"] = "application/json";
+  }
 
   if (token) {
     headers["Authorization"] = `Bearer ${token}`;
@@ -83,6 +87,149 @@ export interface User {
   name: string | null;
   role: string;
   created_at: string;
+}
+
+// Extraction types (matches backend ExtractionResult schema)
+export interface MendelFact {
+  value: string | number | null;
+  unit: string | null;
+  source_section: string;
+  raw_string: string;
+  confidence: "high" | "medium" | "low";
+  is_specification: boolean;
+  test_method: string | null;
+}
+
+export interface ExtractionResult {
+  document_info: {
+    document_type: "TDS" | "SDS" | "RPI" | "CoA" | "Brochure" | "unknown";
+    language: string;
+    manufacturer: string | null;
+    brand: string | null;
+    revision_date: string | null;
+    page_count: number;
+  };
+  identity: {
+    product_name: string;
+    product_line: string | null;
+    wacker_sku: string | null;
+    material_numbers: string[];
+    product_url: string | null;
+    grade: MendelFact | null;
+  };
+  chemical: {
+    cas_numbers: MendelFact;
+    chemical_components: string[];
+    chemical_synonyms: string[];
+    purity: MendelFact | null;
+  };
+  physical: {
+    physical_form: MendelFact | null;
+    density: MendelFact | null;
+    flash_point: MendelFact | null;
+    temperature_range: MendelFact | null;
+    shelf_life: MendelFact | null;
+    cure_system: MendelFact | null;
+  };
+  application: {
+    main_application: string | null;
+    usage_restrictions: string[];
+    packaging_options: string[];
+  };
+  safety: {
+    ghs_statements: string[];
+    un_number: MendelFact | null;
+    certifications: string[];
+    global_inventories: string[];
+    blocked_countries: string[];
+    blocked_industries: string[];
+  };
+  compliance: {
+    wiaw_status: "GREEN LIGHT" | "ATTENTION" | "RED FLAG" | null;
+    sales_advisory: string | null;
+  };
+  missing_attributes: string[];
+  extraction_warnings: string[];
+}
+
+export interface ExtractionResponse {
+  success: boolean;
+  result: ExtractionResult | null;
+  error: string | null;
+  processing_time_ms: number;
+  provider: string | null;
+  model: string | null;
+  cascade: {
+    cascade_triggered: boolean;
+    primary_provider: string | null;
+    primary_model: string | null;
+    primary_missing_count: number | null;
+    fallback_provider: string | null;
+    fallback_model: string | null;
+  } | null;
+  markdown_preview: string | null;
+}
+
+// Batch extraction types
+export interface BatchExtractionResult {
+  filename: string;
+  success: boolean;
+  result: ExtractionResult | null;
+  error: string | null;
+  processing_time_ms: number;
+}
+
+export interface BatchExtractionResponse {
+  success: boolean;
+  results: BatchExtractionResult[];
+  total_processing_time_ms: number;
+  provider: string | null;
+  successful_count: number;
+  failed_count: number;
+}
+
+// Confirm extraction types
+export interface ConfirmExtractionRequest {
+  results: BatchExtractionResult[];
+  total_processing_time_ms: number;
+}
+
+export interface ConfirmExtractionResponse {
+  run_id: number;
+  golden_records_created: number;
+}
+
+// History types
+export interface ExtractionRunSummary {
+  id: number;
+  started_at: string;
+  finished_at: string | null;
+  pdf_count: number | null;
+  golden_records_count: number | null;
+  status: string;
+  total_cost: number | null;
+}
+
+export interface GoldenRecordSummary {
+  id: number;
+  product_name: string;
+  brand: string | null;
+  source_files: string[];
+  source_count: number | null;
+  missing_count: number | null;
+  completeness: number | null;
+  created_at: string;
+  // Versioning & regional variant fields
+  region: string;
+  doc_language: string | null;
+  revision_date: string | null;
+  document_type: string | null;
+  version: number;
+  is_latest: boolean;
+}
+
+export interface ExtractionRunDetail extends ExtractionRunSummary {
+  golden_records: GoldenRecordSummary[];
 }
 
 // API functions
@@ -160,4 +307,65 @@ export const api = {
       token,
       method: "DELETE",
     }),
+
+  // Extraction — single PDF
+  extractPdf: (file: File, signal?: AbortSignal) => {
+    const formData = new FormData();
+    formData.append("file", file);
+    return apiFetch<ExtractionResponse>("/extraction/extract-agent", {
+      method: "POST",
+      body: formData,
+      signal,
+    });
+  },
+
+  // Extraction — multiple PDFs
+  extractPdfBatch: (files: File[], signal?: AbortSignal) => {
+    const formData = new FormData();
+    files.forEach((f) => formData.append("files", f));
+    return apiFetch<BatchExtractionResponse>("/extraction/extract-batch", {
+      method: "POST",
+      body: formData,
+      signal,
+    });
+  },
+
+  // Confirm extraction results → persist to database
+  confirmExtraction: (data: ConfirmExtractionRequest) =>
+    apiFetch<ConfirmExtractionResponse>("/extraction/confirm", {
+      method: "POST",
+      body: JSON.stringify(data),
+    }),
+
+  // History — extraction runs & golden records
+  listRuns: (page = 1, pageSize = 20) =>
+    apiFetch<PaginatedResponse<ExtractionRunSummary>>(
+      `/extraction/runs?page=${page}&page_size=${pageSize}`
+    ),
+
+  getRunDetail: (runId: number) =>
+    apiFetch<ExtractionRunDetail>(`/extraction/runs/${runId}`),
+
+  listGoldenRecords: (
+    runId?: number,
+    page = 1,
+    pageSize = 50,
+    latestOnly = false
+  ) => {
+    const params = new URLSearchParams({
+      page: String(page),
+      page_size: String(pageSize),
+    });
+    if (runId !== undefined) params.set("run_id", String(runId));
+    if (latestOnly) params.set("latest_only", "true");
+    return apiFetch<PaginatedResponse<GoldenRecordSummary>>(
+      `/extraction/golden-records?${params}`
+    );
+  },
+
+  // Version history for a specific golden record
+  getRecordVersions: (recordId: number) =>
+    apiFetch<GoldenRecordSummary[]>(
+      `/extraction/golden-records/${recordId}/versions`
+    ),
 };

@@ -34,7 +34,7 @@ Extract structured product data from this Regulatory Product Information (RPI) d
 - **blocked_industries**: Any stated industry restrictions
 
 ### Compliance (2 fields)
-- **wiaw_status**: "Workplace Instructions according to Wacker" status if present
+- **wiaw_status**: MUST be exactly one of: "GREEN LIGHT", "ATTENTION", "RED FLAG", or null. No other values allowed.
 - **sales_advisory**: Any sales advisory notes or warnings
 
 ### Document Info (5 fields)

@@ -31,17 +31,15 @@ services:
     command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
 
   frontend:
-    build: ./frontend
+    build: .
     ports:
-      - "3000:3000"
+      - "3003:3000"
     environment:
       NEXT_PUBLIC_API_URL: http://localhost:8000/api/v1
     depends_on:
       - backend
-    volumes:
-      - ./frontend:/app
-      - /app/node_modules
-      - /app/.next
+    # No host volume mount — avoids .next cache conflicts with local dev server
+    # Rebuild with: docker compose up -d --build frontend
 
   caddy:
     image: caddy:2-alpine

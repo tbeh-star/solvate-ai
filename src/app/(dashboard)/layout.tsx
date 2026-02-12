@@ -2,16 +2,13 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { SEED_ACTIONS } from "@/lib/seed-actions";
 // TODO: Re-enable Auth0 after testing
 // import { useUser } from "@auth0/nextjs-auth0";
 
-const pendingCount = SEED_ACTIONS.length;
-
 const navItems = [
-  { href: "/queue", label: "Action Queue", badge: pendingCount },
-  { href: "/products", label: "Products", badge: 0 },
-  { href: "/prices", label: "Prices", badge: 0 },
+  { href: "/products", label: "Products" },
+  { href: "/extraction", label: "Extraction" },
+  { href: "/history", label: "History" },
 ];
 
 export default function DashboardLayout({
@@ -31,7 +28,7 @@ export default function DashboardLayout({
           <div className="flex h-16 items-center justify-between">
             {/* Left: brand + nav */}
             <div className="flex items-center gap-10">
-              <Link href="/queue" className="flex items-baseline gap-1.5">
+              <Link href="/products" className="flex items-baseline gap-1.5">
                 <span className="text-[17px] font-semibold tracking-tight text-gray-900">
                   Solvate
                 </span>
@@ -54,11 +51,6 @@ export default function DashboardLayout({
                       }`}
                     >
                       {item.label}
-                      {item.badge > 0 && (
-                        <span className="inline-flex h-[18px] min-w-[18px] items-center justify-center rounded-full bg-gray-900 px-1 text-[10px] font-semibold tabular-nums text-white">
-                          {item.badge}
-                        </span>
-                      )}
                     </Link>
                   );
                 })}

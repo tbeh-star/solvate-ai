@@ -39,7 +39,7 @@ Extract structured product data from this Technical Data Sheet (TDS).
 - **blocked_industries**: Industries where product should not be used
 
 ### Compliance (2 fields)
-- **wiaw_status**: "Workplace Instructions according to Wacker" status
+- **wiaw_status**: MUST be exactly one of: "GREEN LIGHT", "ATTENTION", "RED FLAG", or null. No other values allowed.
 - **sales_advisory**: Any sales advisory notes or warnings
 
 ### Document Info (5 fields)

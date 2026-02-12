@@ -32,7 +32,7 @@ Extract structured product data from this Brochure / Marketing Material.
 - **ghs_statements**, **un_number**, **certifications**, **global_inventories**, **blocked_countries**, **blocked_industries**: Extract if present, null otherwise
 
 ### Compliance (2 fields)
-- **wiaw_status**: If present
+- **wiaw_status**: MUST be exactly one of: "GREEN LIGHT", "ATTENTION", "RED FLAG", or null. No other values allowed.
 - **sales_advisory**: If present
 
 ### Document Info (5 fields)

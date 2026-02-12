@@ -9,6 +9,7 @@ Fixes common LLM output errors before Pydantic validation:
   6. cas_numbers as list of MendelFacts → join into single MendelFact
   7. main_application as list → join into single string
   8. Single MendelFact fields returned as list → take first element
+  9. wiaw_status invalid literal → set to None
 
 This module is shared between the legacy batch_extractor and the new agent pipeline.
 """
@@ -48,6 +49,10 @@ PLAIN_STRING_LIST_FIELDS = {
     "blocked_countries", "blocked_industries",
     "missing_attributes", "extraction_warnings",
 }
+
+# Allowed literal values for restricted fields
+WIAW_STATUS_ALLOWED = {"GREEN LIGHT", "ATTENTION", "RED FLAG"}
+SALES_ADVISORY_ALLOWED = {"GO", "CHECK", "STOP"}
 
 # Map full document type names to short codes
 DOC_TYPE_MAP = {
@@ -126,6 +131,11 @@ def sanitize_extraction_json(data: dict) -> dict:
                 result[key] = mapped if mapped else val
                 continue
 
+            # Fix page_count: None -> 0 (schema requires int, not Optional[int])
+            if key == "page_count" and val is None:
+                result[key] = 0
+                continue
+
             # Fix plain string fields wrapped in MendelFact or wrapped in list
             if key in PLAIN_STRING_FIELDS:
                 if isinstance(val, dict) and "value" in val:
@@ -142,6 +152,11 @@ def sanitize_extraction_json(data: dict) -> dict:
                     result[key] = "; ".join(parts) if parts else None
                 else:
                     result[key] = val
+
+                # Validate wiaw_status: must be one of the allowed literals or None
+                if key == "wiaw_status" and result.get(key) is not None:
+                    if result[key].upper().strip() not in WIAW_STATUS_ALLOWED:
+                        result[key] = None
 
             # Fix single MendelFact fields returned as list -> take first element
             elif key in SINGLE_MENDELFACT_FIELDS:

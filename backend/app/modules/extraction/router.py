@@ -1,25 +1,58 @@
-"""M3ndel Extraction API — POST /extraction/extract endpoint.
+"""M3ndel Extraction API — /extraction/ endpoints.
 
-Two pipelines available:
+Pipelines:
   - /extract        — Legacy monolithic pipeline (ExtractorService + Instructor)
-  - /extract-agent  — New multi-agent pipeline (Classify → Extract → Audit → Result)
+  - /extract-agent  — New multi-agent pipeline, single PDF
+  - /extract-batch  — Multi-agent pipeline, multiple PDFs at once
+
+History (read-only):
+  - /runs           — Paginated list of past extraction runs
+  - /runs/{id}      — Single run with golden records
+  - /golden-records — Paginated golden records (optional run_id filter)
 """
 
 from __future__ import annotations
 
+import math
+import shutil
 import tempfile
 import time
+from datetime import datetime, timezone
 from pathlib import Path
 
 import structlog
-from fastapi import APIRouter, File, Form, HTTPException, UploadFile
+from fastapi import APIRouter, Depends, File, Form, HTTPException, Query, UploadFile
+from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.config import settings
+from app.core.database import get_db
+from app.modules.extraction.models import ExtractionRun, GoldenRecord
 from app.modules.extraction.extractor import ExtractorService
 from app.modules.extraction.agents.orchestrator import OrchestratorAgent
 from app.modules.extraction.cost_tracker import CostTracker
+from app.modules.extraction.history_schemas import (
+    ExtractionRunDetail,
+    ExtractionRunSummary,
+    GoldenRecordSummary,
+    PaginatedGoldenRecords,
+    PaginatedRuns,
+)
+from app.modules.extraction.history_service import (
+    get_run_detail,
+    list_golden_records,
+    list_product_versions,
+    list_runs,
+)
 from app.modules.extraction.pdf_service import parse_pdf
-from app.modules.extraction.schemas import ExtractionResponse, ExtractionResult
+from app.modules.extraction.versioning import assign_version, resolve_region
+from app.modules.extraction.schemas import (
+    BatchExtractionResponse,
+    BatchExtractionResultSchema,
+    ConfirmExtractionRequest,
+    ConfirmExtractionResponse,
+    ExtractionResponse,
+    ExtractionResult,
+)
 
 logger = structlog.get_logger()
 
@@ -183,3 +216,290 @@ async def extract_pdf_agent(
             error=str(exc),
             processing_time_ms=elapsed_ms,
         )
+
+
+# ---------------------------------------------------------------------------
+# NEW: Batch Multi-Agent Pipeline endpoint
+# ---------------------------------------------------------------------------
+
+MAX_BATCH_FILES = 20
+
+
+@router.post("/extract-batch", response_model=BatchExtractionResponse)
+async def extract_pdf_batch(
+    files: list[UploadFile] = File(..., description="Multiple PDF documents"),
+) -> BatchExtractionResponse:
+    """Upload multiple PDFs and extract structured data via the multi-agent pipeline.
+
+    Processes each PDF sequentially through: Classify → Extract → Audit → Result.
+    Returns individual results per file.
+    """
+    start = time.monotonic()
+
+    # --- Validate ---
+    if len(files) > MAX_BATCH_FILES:
+        raise HTTPException(
+            status_code=400,
+            detail=f"Too many files: {len(files)} (max {MAX_BATCH_FILES}).",
+        )
+    if len(files) == 0:
+        raise HTTPException(status_code=400, detail="No files uploaded.")
+
+    logger.info("Batch extraction request", file_count=len(files))
+
+    # Write all PDFs to temp dir, track original filenames
+    tmp_dir = Path(tempfile.mkdtemp(prefix="mendel_batch_"))
+    file_map: list[tuple[str, Path]] = []  # (original_name, tmp_path)
+
+    try:
+        for upload in files:
+            if not upload.filename or not upload.filename.lower().endswith(".pdf"):
+                raise HTTPException(
+                    status_code=400,
+                    detail=f"Only PDF files accepted. Got: {upload.filename}",
+                )
+            pdf_bytes = await upload.read()
+            size_mb = len(pdf_bytes) / (1024 * 1024)
+            if size_mb > settings.extraction_max_file_size_mb:
+                raise HTTPException(
+                    status_code=413,
+                    detail=f"File too large: {upload.filename} ({size_mb:.1f} MB, max {settings.extraction_max_file_size_mb} MB).",
+                )
+            # Use index prefix to avoid name collisions
+            safe_name = f"{len(file_map):03d}_{upload.filename}"
+            tmp_path = tmp_dir / safe_name
+            tmp_path.write_bytes(pdf_bytes)
+            file_map.append((upload.filename, tmp_path))
+
+        # Process batch via orchestrator
+        cost_tracker = CostTracker()
+        orchestrator = OrchestratorAgent(cost_tracker=cost_tracker)
+        partials = orchestrator.process_batch([p for _, p in file_map])
+
+        results: list[BatchExtractionResultSchema] = []
+        successful = 0
+        failed = 0
+
+        for idx, partial in enumerate(partials):
+            original_name = file_map[idx][0]
+            if partial.extraction_result:
+                result_obj = ExtractionResult.model_validate(partial.extraction_result)
+                results.append(BatchExtractionResultSchema(
+                    filename=original_name,
+                    success=True,
+                    result=result_obj,
+                ))
+                successful += 1
+            else:
+                results.append(BatchExtractionResultSchema(
+                    filename=original_name,
+                    success=False,
+                    error="; ".join(partial.warnings) or "No result",
+                ))
+                failed += 1
+
+        total_ms = int((time.monotonic() - start) * 1000)
+        cost_summary = cost_tracker.summary()
+        providers = cost_summary.get("providers", {})
+        provider_name = next(iter(providers), "google") if providers else "google"
+
+        return BatchExtractionResponse(
+            success=successful > 0,
+            results=results,
+            total_processing_time_ms=total_ms,
+            provider=provider_name,
+            successful_count=successful,
+            failed_count=failed,
+        )
+    finally:
+        shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+# ---------------------------------------------------------------------------
+# Confirm & persist extraction results to the database
+# ---------------------------------------------------------------------------
+
+
+@router.post("/confirm", response_model=ConfirmExtractionResponse)
+async def confirm_extraction(
+    request: ConfirmExtractionRequest,
+    db: AsyncSession = Depends(get_db),
+) -> ConfirmExtractionResponse:
+    """Persist batch extraction results to the database.
+
+    Creates an ExtractionRun and one GoldenRecord per unique product.
+    Deduplicates by product_name within the batch (UNIQUE constraint).
+    The DB session auto-commits via the get_db() dependency.
+    """
+    successful = [r for r in request.results if r.success and r.result]
+
+    if not successful:
+        raise HTTPException(
+            status_code=400,
+            detail="No successful extraction results to confirm.",
+        )
+
+    # Create the ExtractionRun entry
+    run = ExtractionRun(
+        finished_at=datetime.now(timezone.utc),
+        pdf_count=len(request.results),
+        golden_records_count=len(successful),
+        status="completed",
+    )
+    db.add(run)
+    await db.flush()  # Generates run.id
+
+    # Create GoldenRecord per unique (product_name, region) combination.
+    # The composite key allows the same product to exist multiple times
+    # when it has region-specific SDS variants (EU vs US vs JP).
+    seen_keys: set[tuple[str, str]] = set()  # (product_name, region)
+    for item in successful:
+        assert item.result is not None  # guarded by filter above
+        name = item.result.identity.product_name
+        region = resolve_region(item.result)
+        key = (name, region)
+
+        if key in seen_keys:
+            logger.warning(
+                "Duplicate product+region in batch, skipping",
+                product_name=name,
+                region=region,
+                filename=item.filename,
+            )
+            continue
+        seen_keys.add(key)
+
+        # Auto-increment version and obsolete previous records
+        version, obsoleted = await assign_version(db, name, region)
+
+        missing = len(item.result.missing_attributes)
+        golden = GoldenRecord(
+            run_id=run.id,
+            product_name=name,
+            brand=item.result.document_info.brand,
+            region=region,
+            doc_language=item.result.document_info.language,
+            revision_date=item.result.document_info.revision_date,
+            document_type=item.result.document_info.document_type,
+            version=version,
+            is_latest=True,
+            golden_record=item.result.model_dump(),
+            source_files=[item.filename],
+            source_count=1,
+            missing_count=missing,
+            completeness=round(((33 - missing) / 33) * 100, 1),
+        )
+        db.add(golden)
+
+    logger.info(
+        "Extraction confirmed",
+        run_id=run.id,
+        golden_records_created=len(seen_keys),
+    )
+
+    # get_db() auto-commits after this return
+    return ConfirmExtractionResponse(
+        run_id=run.id,
+        golden_records_created=len(seen_keys),
+    )
+
+
+# ---------------------------------------------------------------------------
+# History — read-only endpoints for extraction runs & golden records
+# ---------------------------------------------------------------------------
+
+
+@router.get("/runs", response_model=PaginatedRuns)
+async def get_extraction_runs(
+    page: int = Query(1, ge=1, description="Page number"),
+    page_size: int = Query(20, ge=1, le=100, description="Items per page"),
+    db: AsyncSession = Depends(get_db),
+) -> PaginatedRuns:
+    """Return a paginated list of extraction runs, newest first."""
+    items, total = await list_runs(db, page=page, page_size=page_size)
+    return PaginatedRuns(
+        items=[
+            ExtractionRunSummary.model_validate(r, from_attributes=True)
+            for r in items
+        ],
+        total=total,
+        page=page,
+        page_size=page_size,
+        pages=math.ceil(total / page_size) if total > 0 else 0,
+    )
+
+
+@router.get("/runs/{run_id}", response_model=ExtractionRunDetail)
+async def get_extraction_run_detail(
+    run_id: int,
+    db: AsyncSession = Depends(get_db),
+) -> ExtractionRunDetail:
+    """Return a single extraction run with its golden records."""
+    run = await get_run_detail(db, run_id=run_id)
+    if run is None:
+        raise HTTPException(status_code=404, detail=f"Extraction run {run_id} not found.")
+
+    records, _ = await list_golden_records(db, run_id=run_id, page=1, page_size=500)
+
+    run_summary = ExtractionRunSummary.model_validate(run, from_attributes=True)
+    return ExtractionRunDetail(
+        **run_summary.model_dump(),
+        golden_records=[
+            GoldenRecordSummary.model_validate(r, from_attributes=True)
+            for r in records
+        ],
+    )
+
+
+@router.get("/golden-records", response_model=PaginatedGoldenRecords)
+async def get_golden_records(
+    run_id: int | None = Query(None, description="Filter by extraction run ID"),
+    latest_only: bool = Query(
+        False, description="Only return the latest version per product+region"
+    ),
+    page: int = Query(1, ge=1, description="Page number"),
+    page_size: int = Query(50, ge=1, le=200, description="Items per page"),
+    db: AsyncSession = Depends(get_db),
+) -> PaginatedGoldenRecords:
+    """Return paginated golden records, optionally filtered by run_id."""
+    items, total = await list_golden_records(
+        db, run_id=run_id, latest_only=latest_only, page=page, page_size=page_size
+    )
+    return PaginatedGoldenRecords(
+        items=[
+            GoldenRecordSummary.model_validate(r, from_attributes=True)
+            for r in items
+        ],
+        total=total,
+        page=page,
+        page_size=page_size,
+        pages=math.ceil(total / page_size) if total > 0 else 0,
+    )
+
+
+@router.get(
+    "/golden-records/{record_id}/versions",
+    response_model=list[GoldenRecordSummary],
+)
+async def get_record_versions(
+    record_id: int,
+    db: AsyncSession = Depends(get_db),
+) -> list[GoldenRecordSummary]:
+    """Return all versions of the same product+region, newest first.
+
+    Looks up the record by ID, then queries all records sharing the same
+    product_name and region. Useful for the version-history flyout in the UI.
+    """
+    record = await db.get(GoldenRecord, record_id)
+    if record is None:
+        raise HTTPException(
+            status_code=404, detail=f"Golden record {record_id} not found."
+        )
+
+    versions = await list_product_versions(
+        db, product_name=record.product_name, region=record.region
+    )
+    return [
+        GoldenRecordSummary.model_validate(v, from_attributes=True)
+        for v in versions
+    ]

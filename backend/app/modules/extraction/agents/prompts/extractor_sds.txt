@@ -39,7 +39,7 @@ Extract structured product data from this Safety Data Sheet (SDS).
 - **blocked_industries**: Section 1/15 — Any stated industry restrictions
 
 ### Compliance (2 fields)
-- **wiaw_status**: If present in regulatory section
+- **wiaw_status**: MUST be exactly one of: "GREEN LIGHT", "ATTENTION", "RED FLAG", or null. No other values allowed.
 - **sales_advisory**: Any sales advisory notes
 
 ### Document Info (5 fields)

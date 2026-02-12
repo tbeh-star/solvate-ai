@@ -26,6 +26,7 @@ from app.modules.taxonomy.models import (  # noqa: F401
     ProductCategory,
     TaxonomyCategory,
 )
+from app.modules.extraction.models import ExtractionRun, GoldenRecord  # noqa: F401
 
 config = context.config
 config.set_main_option("sqlalchemy.url", settings.database_url)

@@ -26,7 +26,7 @@ from pathlib import Path
 
 _OUTPUT = Path(__file__).resolve().parent.parent / "output"
 MONOLITH_JSON = _OUTPUT / "batch_results" / "batch_results_20260210_194712.json"
-AGENT_JSON = _OUTPUT / "agent_results" / "agent_partials_20260210_225544.json"
+AGENT_JSON = _OUTPUT / "agent_results" / "agent_partials_20260211_125706.json"
 REPORT_PATH = _OUTPUT / "agent_results" / "regression_report.txt"
 
 # All 33 attributes we track (grouped by section)

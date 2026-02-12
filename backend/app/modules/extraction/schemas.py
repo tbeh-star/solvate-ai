@@ -228,3 +228,48 @@ class ExtractionResponse(BaseModel):
     model: str | None = Field(None, description="Model that produced the final result")
     cascade: CascadeInfo | None = Field(None, description="Cascade/fallback metadata (if enabled)")
     markdown_preview: str | None = None
+
+
+# ---------------------------------------------------------------------------
+# Batch extraction schemas
+# ---------------------------------------------------------------------------
+
+
+class BatchExtractionResultSchema(BaseModel):
+    """Single file result within a batch extraction."""
+
+    filename: str
+    success: bool
+    result: ExtractionResult | None = None
+    error: str | None = None
+    processing_time_ms: int = 0
+
+
+class BatchExtractionResponse(BaseModel):
+    """Response envelope for POST /extraction/extract-batch."""
+
+    success: bool
+    results: list[BatchExtractionResultSchema]
+    total_processing_time_ms: int = 0
+    provider: str | None = None
+    successful_count: int
+    failed_count: int
+
+
+# ---------------------------------------------------------------------------
+# Confirm / persist schemas
+# ---------------------------------------------------------------------------
+
+
+class ConfirmExtractionRequest(BaseModel):
+    """Request to persist batch extraction results to the database."""
+
+    results: list[BatchExtractionResultSchema]
+    total_processing_time_ms: int = 0
+
+
+class ConfirmExtractionResponse(BaseModel):
+    """Response after persisting extraction results."""
+
+    run_id: int
+    golden_records_created: int
