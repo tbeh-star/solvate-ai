@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, useCallback } from "react";
+import Link from "next/link";
 import {
   api,
   ExtractionRunSummary,
@@ -249,15 +250,53 @@ export default function HistoryPage() {
             </svg>
             Back to Runs
           </button>
-          <h1 className="text-[22px] font-semibold tracking-tight text-gray-900">
-            Run #{selectedRunId}
-          </h1>
-          {runDetail && (
-            <p className="mt-1 text-[13px] text-gray-400">
-              {formatDate(runDetail.started_at)} &middot;{" "}
-              {formatTime(runDetail.started_at)}
-            </p>
-          )}
+          <div className="flex items-start justify-between">
+            <div>
+              <h1 className="text-[22px] font-semibold tracking-tight text-gray-900">
+                Run #{selectedRunId}
+              </h1>
+              {runDetail && (
+                <p className="mt-1 text-[13px] text-gray-400">
+                  {formatDate(runDetail.started_at)} &middot;{" "}
+                  {formatTime(runDetail.started_at)}
+                </p>
+              )}
+            </div>
+            {runDetail && (runDetail.golden_records_count ?? 0) > 0 && (
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={() =>
+                    window.open(
+                      api.exportGoldenRecordsUrl({
+                        format: "csv",
+                        runId: selectedRunId!,
+                      }),
+                      "_blank"
+                    )
+                  }
+                  className="flex items-center gap-1.5 rounded-lg border border-gray-200/80 bg-white px-3 py-2 text-[12px] font-medium text-gray-600 transition-colors hover:bg-gray-50"
+                >
+                  <DownloadIcon />
+                  CSV
+                </button>
+                <button
+                  onClick={() =>
+                    window.open(
+                      api.exportGoldenRecordsUrl({
+                        format: "xlsx",
+                        runId: selectedRunId!,
+                      }),
+                      "_blank"
+                    )
+                  }
+                  className="flex items-center gap-1.5 rounded-lg border border-gray-200/80 bg-white px-3 py-2 text-[12px] font-medium text-gray-600 transition-colors hover:bg-gray-50"
+                >
+                  <DownloadIcon />
+                  Excel
+                </button>
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Loading / Error */}
@@ -350,9 +389,12 @@ export default function HistoryPage() {
                       >
                         {/* Product name + source files */}
                         <td className="px-5 py-3.5">
-                          <span className="text-[13px] font-medium text-gray-900">
+                          <Link
+                            href={`/history/records/${gr.id}`}
+                            className="text-[13px] font-medium text-gray-900 hover:text-blue-600 transition-colors"
+                          >
                             {gr.product_name}
-                          </span>
+                          </Link>
                           {gr.source_files.length > 0 && (
                             <p className="mt-0.5 max-w-[200px] truncate text-[10px] text-gray-400">
                               {gr.source_files[0]}
@@ -595,6 +637,25 @@ export default function HistoryPage() {
                               </div>
                             )}
                           </div>
+
+                          {/* Actions: View & Compare */}
+                          {!isCurrent && versionForRecord && (
+                            <div className="mt-3 flex items-center gap-3">
+                              <Link
+                                href={`/history/records/${v.id}`}
+                                className="text-[11px] font-medium text-blue-600 hover:text-blue-800"
+                                onClick={closeVersionFlyout}
+                              >
+                                View
+                              </Link>
+                              <Link
+                                href={`/history/records/${versionForRecord}/diff/${v.id}`}
+                                className="text-[11px] font-medium text-violet-600 hover:text-violet-800"
+                              >
+                                Compare
+                              </Link>
+                            </div>
+                          )}
                         </div>
                       );
                     })}
@@ -618,13 +679,41 @@ export default function HistoryPage() {
   return (
     <div>
       {/* Header */}
-      <div className="mb-8">
-        <h1 className="text-[22px] font-semibold tracking-tight text-gray-900">
-          History
-        </h1>
-        <p className="mt-1 text-[13px] text-gray-400">
-          Past extraction runs &amp; golden records
-        </p>
+      <div className="mb-8 flex items-start justify-between">
+        <div>
+          <h1 className="text-[22px] font-semibold tracking-tight text-gray-900">
+            History
+          </h1>
+          <p className="mt-1 text-[13px] text-gray-400">
+            Past extraction runs &amp; golden records
+          </p>
+        </div>
+        <div className="flex items-center gap-2">
+          <button
+            onClick={() =>
+              window.open(
+                api.exportGoldenRecordsUrl({ format: "csv", latestOnly: true }),
+                "_blank"
+              )
+            }
+            className="flex items-center gap-1.5 rounded-lg border border-gray-200/80 bg-white px-3 py-2 text-[12px] font-medium text-gray-600 transition-colors hover:bg-gray-50"
+          >
+            <DownloadIcon />
+            Export CSV
+          </button>
+          <button
+            onClick={() =>
+              window.open(
+                api.exportGoldenRecordsUrl({ format: "xlsx", latestOnly: true }),
+                "_blank"
+              )
+            }
+            className="flex items-center gap-1.5 rounded-lg border border-gray-200/80 bg-white px-3 py-2 text-[12px] font-medium text-gray-600 transition-colors hover:bg-gray-50"
+          >
+            <DownloadIcon />
+            Export Excel
+          </button>
+        </div>
       </div>
 
       {/* KPI Cards */}
@@ -777,5 +866,25 @@ export default function HistoryPage() {
         </div>
       )}
     </div>
+  );
+}
+
+/* ── Icon components ──────────────────────────────────────── */
+
+function DownloadIcon() {
+  return (
+    <svg
+      className="h-3.5 w-3.5"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+      />
+    </svg>
   );
 }

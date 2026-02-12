@@ -44,6 +44,41 @@ class GoldenRecordDetail(GoldenRecordSummary):
 
 
 # ---------------------------------------------------------------------------
+# Version diff
+# ---------------------------------------------------------------------------
+
+
+class DiffEntry(BaseModel):
+    """A single field-level change between two versions."""
+
+    field: str
+    change_type: str  # "added" | "removed" | "changed"
+    old_value: str | float | list | dict | None = None
+    new_value: str | float | list | dict | None = None
+    old_unit: str | None = None
+    new_unit: str | None = None
+    old_confidence: str | None = None
+    new_confidence: str | None = None
+
+
+class SectionDiff(BaseModel):
+    """Changes within one ExtractionResult section."""
+
+    section: str
+    changes: list[DiffEntry]
+
+
+class VersionDiffResponse(BaseModel):
+    """Full diff between two golden record versions."""
+
+    record_a: GoldenRecordSummary
+    record_b: GoldenRecordSummary
+    sections: list[SectionDiff]
+    total_changes: int
+    summary: str
+
+
+# ---------------------------------------------------------------------------
 # Extraction Run views
 # ---------------------------------------------------------------------------
 

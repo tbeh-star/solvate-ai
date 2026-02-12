@@ -232,6 +232,35 @@ export interface ExtractionRunDetail extends ExtractionRunSummary {
   golden_records: GoldenRecordSummary[];
 }
 
+export interface GoldenRecordDetail extends GoldenRecordSummary {
+  golden_record: ExtractionResult;
+}
+
+// Version diff types
+export interface DiffEntry {
+  field: string;
+  change_type: "added" | "removed" | "changed";
+  old_value: string | number | string[] | Record<string, unknown> | null;
+  new_value: string | number | string[] | Record<string, unknown> | null;
+  old_unit: string | null;
+  new_unit: string | null;
+  old_confidence: string | null;
+  new_confidence: string | null;
+}
+
+export interface SectionDiff {
+  section: string;
+  changes: DiffEntry[];
+}
+
+export interface VersionDiffResponse {
+  record_a: GoldenRecordSummary;
+  record_b: GoldenRecordSummary;
+  sections: SectionDiff[];
+  total_changes: number;
+  summary: string;
+}
+
 // API functions
 export const api = {
   // Auth
@@ -368,4 +397,30 @@ export const api = {
     apiFetch<GoldenRecordSummary[]>(
       `/extraction/golden-records/${recordId}/versions`
     ),
+
+  // Golden record detail (full JSONB data)
+  getGoldenRecordDetail: (recordId: number) =>
+    apiFetch<GoldenRecordDetail>(
+      `/extraction/golden-records/${recordId}`
+    ),
+
+  // Version diff between two golden records
+  getVersionDiff: (id1: number, id2: number) =>
+    apiFetch<VersionDiffResponse>(
+      `/extraction/golden-records/${id1}/diff/${id2}`
+    ),
+
+  // Export URL builder (returns URL string for direct download)
+  exportGoldenRecordsUrl: (params: {
+    format: "csv" | "xlsx";
+    runId?: number;
+    latestOnly?: boolean;
+  }): string => {
+    const searchParams = new URLSearchParams({
+      format: params.format,
+    });
+    if (params.runId !== undefined) searchParams.set("run_id", String(params.runId));
+    if (params.latestOnly) searchParams.set("latest_only", "true");
+    return `${API_BASE}/extraction/golden-records/export?${searchParams}`;
+  },
 };

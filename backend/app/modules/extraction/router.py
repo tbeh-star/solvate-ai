@@ -31,13 +31,19 @@ from app.modules.extraction.extractor import ExtractorService
 from app.modules.extraction.agents.orchestrator import OrchestratorAgent
 from app.modules.extraction.cost_tracker import CostTracker
 from app.modules.extraction.history_schemas import (
+    DiffEntry,
     ExtractionRunDetail,
     ExtractionRunSummary,
+    GoldenRecordDetail,
     GoldenRecordSummary,
     PaginatedGoldenRecords,
     PaginatedRuns,
+    SectionDiff,
+    VersionDiffResponse,
 )
 from app.modules.extraction.history_service import (
+    compute_diff,
+    get_golden_record_by_id,
     get_run_detail,
     list_golden_records,
     list_product_versions,
@@ -474,6 +480,149 @@ async def get_golden_records(
         page=page,
         page_size=page_size,
         pages=math.ceil(total / page_size) if total > 0 else 0,
+    )
+
+
+def _fact_value(fact: object) -> str:
+    """Extract display value from a MendelFact or primitive."""
+    if fact is None:
+        return ""
+    if isinstance(fact, dict) and "value" in fact:
+        v = str(fact.get("value", ""))
+        u = fact.get("unit", "")
+        return f"{v} {u}".strip() if u else v
+    return str(fact)
+
+
+def _flatten_golden_record(record: GoldenRecord) -> dict:
+    """Flatten a GoldenRecord into a flat dict for CSV/Excel export."""
+    gr = record.golden_record or {}
+    return {
+        "id": record.id,
+        "product_name": record.product_name,
+        "brand": record.brand or "",
+        "region": record.region,
+        "version": record.version,
+        "is_latest": record.is_latest,
+        "document_type": gr.get("document_info", {}).get("document_type", ""),
+        "language": gr.get("document_info", {}).get("language", ""),
+        "manufacturer": gr.get("document_info", {}).get("manufacturer", ""),
+        "revision_date": gr.get("document_info", {}).get("revision_date", ""),
+        "product_line": gr.get("identity", {}).get("product_line", ""),
+        "wacker_sku": gr.get("identity", {}).get("wacker_sku", ""),
+        "cas_numbers": _fact_value(gr.get("chemical", {}).get("cas_numbers")),
+        "chemical_components": "; ".join(gr.get("chemical", {}).get("chemical_components", [])),
+        "purity": _fact_value(gr.get("chemical", {}).get("purity")),
+        "physical_form": _fact_value(gr.get("physical", {}).get("physical_form")),
+        "density": _fact_value(gr.get("physical", {}).get("density")),
+        "flash_point": _fact_value(gr.get("physical", {}).get("flash_point")),
+        "temperature_range": _fact_value(gr.get("physical", {}).get("temperature_range")),
+        "shelf_life": _fact_value(gr.get("physical", {}).get("shelf_life")),
+        "cure_system": _fact_value(gr.get("physical", {}).get("cure_system")),
+        "main_application": gr.get("application", {}).get("main_application", ""),
+        "packaging_options": "; ".join(gr.get("application", {}).get("packaging_options", [])),
+        "ghs_statements": "; ".join(gr.get("safety", {}).get("ghs_statements", [])),
+        "un_number": _fact_value(gr.get("safety", {}).get("un_number")),
+        "certifications": "; ".join(gr.get("safety", {}).get("certifications", [])),
+        "global_inventories": "; ".join(gr.get("safety", {}).get("global_inventories", [])),
+        "wiaw_status": gr.get("compliance", {}).get("wiaw_status", ""),
+        "completeness": record.completeness or 0,
+        "missing_count": record.missing_count or 0,
+        "source_files": "; ".join(record.source_files or []),
+        "created_at": str(record.created_at),
+    }
+
+
+@router.get("/golden-records/export")
+async def export_golden_records(
+    format: str = Query("csv", description="Export format: csv or xlsx"),
+    run_id: int | None = Query(None, description="Filter by extraction run"),
+    latest_only: bool = Query(True, description="Only export latest versions"),
+    db: AsyncSession = Depends(get_db),
+):
+    """Export golden records as CSV or Excel file."""
+    import io
+    import pandas as pd
+    from fastapi.responses import StreamingResponse
+
+    if format not in ("csv", "xlsx"):
+        raise HTTPException(
+            status_code=422,
+            detail=f"Invalid format '{format}'. Must be 'csv' or 'xlsx'.",
+        )
+
+    records, _ = await list_golden_records(
+        db, run_id=run_id, latest_only=latest_only, page=1, page_size=10_000
+    )
+    if not records:
+        raise HTTPException(status_code=404, detail="No records found for export.")
+
+    rows = [_flatten_golden_record(r) for r in records]
+    df = pd.DataFrame(rows)
+
+    buffer = io.BytesIO()
+    if format == "xlsx":
+        df.to_excel(buffer, index=False, engine="openpyxl")
+        buffer.seek(0)
+        return StreamingResponse(
+            buffer,
+            media_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+            headers={"Content-Disposition": "attachment; filename=golden_records.xlsx"},
+        )
+    else:
+        df.to_csv(buffer, index=False)
+        buffer.seek(0)
+        return StreamingResponse(
+            buffer,
+            media_type="text/csv",
+            headers={"Content-Disposition": "attachment; filename=golden_records.csv"},
+        )
+
+
+@router.get("/golden-records/{record_id}", response_model=GoldenRecordDetail)
+async def get_golden_record_detail(
+    record_id: int,
+    db: AsyncSession = Depends(get_db),
+) -> GoldenRecordDetail:
+    """Return a single golden record with full JSONB extraction data."""
+    record = await get_golden_record_by_id(db, record_id=record_id)
+    if record is None:
+        raise HTTPException(
+            status_code=404, detail=f"Golden record {record_id} not found."
+        )
+    return GoldenRecordDetail.model_validate(record, from_attributes=True)
+
+
+@router.get(
+    "/golden-records/{id1}/diff/{id2}",
+    response_model=VersionDiffResponse,
+)
+async def get_version_diff(
+    id1: int,
+    id2: int,
+    db: AsyncSession = Depends(get_db),
+) -> VersionDiffResponse:
+    """Compare two golden record versions and return structured diff."""
+    record_a = await get_golden_record_by_id(db, record_id=id1)
+    record_b = await get_golden_record_by_id(db, record_id=id2)
+    if record_a is None:
+        raise HTTPException(status_code=404, detail=f"Record {id1} not found.")
+    if record_b is None:
+        raise HTTPException(status_code=404, detail=f"Record {id2} not found.")
+
+    sections, total = compute_diff(record_a.golden_record, record_b.golden_record)
+
+    added = sum(1 for s in sections for c in s["changes"] if c["change_type"] == "added")
+    removed = sum(1 for s in sections for c in s["changes"] if c["change_type"] == "removed")
+    changed = sum(1 for s in sections for c in s["changes"] if c["change_type"] == "changed")
+    summary = f"{changed} changed, {added} added, {removed} removed"
+
+    return VersionDiffResponse(
+        record_a=GoldenRecordSummary.model_validate(record_a, from_attributes=True),
+        record_b=GoldenRecordSummary.model_validate(record_b, from_attributes=True),
+        sections=[SectionDiff(**s) for s in sections],
+        total_changes=total,
+        summary=summary,
     )
 
 
